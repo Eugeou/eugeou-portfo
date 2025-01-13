@@ -90,8 +90,8 @@ const AboutMe = () => {
                     initial={{ opacity: 0, y: 500 }} 
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="text-center text-red-600 font-bold mt-10 text-3xl p-3 border-b-4 border-b-red-600 ">ABOUT ME</motion.h2>
-                <div className="flex justify-between items-start mt-20 w-full">
+                    className="text-center text-red-600 font-bold mt-5 text-3xl p-3 border-b-4 border-b-red-600 ">ABOUT ME</motion.h2>
+                <div className="flex justify-between items-start mt-10 w-full">
                     <motion.div 
                         initial={{ opacity: 0, y: 500 }}
                         animate={{ opacity: 1, y: 0 }}

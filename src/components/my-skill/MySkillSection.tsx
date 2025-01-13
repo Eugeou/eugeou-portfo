@@ -27,7 +27,7 @@ const MySkillsSection = () => {
             transition={{ duration: 0.9 }}
             layout
             className="flex flex-col items-center h-screen bg-gradient-to-r from-[#f5f5f9] to-[#e1e2f7]">
-            <div className="relative bg-red-500 text-white py-2 overflow-hidden">
+            <div className="relative bg-red-500 text-white py-3 overflow-hidden">
                 {/* Background Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-red-300 to-blue-500 opacity-25"></div>
 
@@ -67,7 +67,7 @@ const MySkillsSection = () => {
                         MY SKILLS
                 </motion.h2>
 
-                <div className="flex justify-between items-start mt-20 w-full">
+                <div className="flex justify-between items-start mt-10 w-full">
 
                     <motion.div className=" h-16 w-1/5 bg-[url('/assets/rec.png')] bg-no-repeat bg-contain flex justify-start items-center px-4"
                         initial={{ opacity: 0, x: -100 }}
@@ -82,7 +82,7 @@ const MySkillsSection = () => {
                     initial={{ opacity: 0, x: -100 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.9 }}
-                    className="flex justify-center items-center mt-20 w-full px-10 space-x-10">
+                    className="flex justify-center items-center mt-10 w-full px-10 space-x-10">
                     <motion.div layout 
                         whileHover={{ scale: 1.1 }}
                         className="flex justify-center items-center bg-[#f4dcdd] rounded-3xl space-x-4 p-4 ">
