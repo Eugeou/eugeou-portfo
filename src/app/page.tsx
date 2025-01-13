@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { motion, useInView, useScroll, useSpring } from "framer-motion";
 import Hero from "@/components/hero/Hero";
+import AboutMe from "@/components/about-me/AboutMe";
 
 export default function Home() {
 
@@ -28,6 +29,9 @@ export default function Home() {
       
       {/* Hero */}
       <Hero/>
+
+      {/* About me */}
+      <AboutMe/>
     </div>
   );
 }

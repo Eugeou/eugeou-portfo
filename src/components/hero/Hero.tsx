@@ -77,16 +77,16 @@ const Hero = () => {
         >
             <div className="w-1/2 justify-start  items-start flex flex-col">
                 <motion.h1
-                    className="font-bold text-red-700 ml-16"
+                    className="font-bold text-black ml-16"
                     style ={{fontSize: "4rem"}}
                     initial={{ opacity: 0, x: -1000 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.9 }}
                 >
-                    Hi everyone, welcome <br/>to my Portfolio page!
+                    Hi everyone, welcome <br/>to <span className="text-red-600">my Portfolio page</span>!
                 </motion.h1>
                 <motion.h3
-                    className="font-medium text-red-600 mt-2 ml-16"
+                    className="font-medium text-gray-500 mt-2 ml-16"
                     style ={{fontSize: "2.5rem"}}
                     initial={{ opacity: 0, x: -1000 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -95,7 +95,7 @@ const Hero = () => {
                     Let’s visit around to know more <br/>about me!
                 </motion.h3>
                 <motion.button
-                    className="bg-red-600 flex justify-between items-center text-center text-xl space-x-3 text-white font-semibold py-3 px-4 mt-6 ml-16"
+                    className="bg-red-600 flex justify-between items-center text-center text-xl space-x-3 text-white font-semibold py-3 px-5 mt-6 ml-16"
                     style={{ borderRadius: "24px"}}
                     initial={{ opacity: 0, x: -1000 }}
                     animate={{ opacity: 1, x: 0 }}
