@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const Header = () => {
+
   return (
     <header className="flex justify-between items-center bg-gradient-to-r from-[#E6212B] to-[#801218] p-4 w-full fixed top-0 z-10"
     > 
@@ -13,7 +14,7 @@ const Header = () => {
         transition = {{ duration: 0.9 }}
       >
         <Image
-          src="/asset/logo.png"
+          src="/assets/logo.png"
           alt="Logo"
           width={50}
           height={50}
