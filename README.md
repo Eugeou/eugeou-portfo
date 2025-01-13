@@ -1,4 +1,9 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org) , TypeScript, Tailwind Css and Framer motion project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+Visit my portfolio at: [Eugeou portfolio](https://eugeou-portfolio-ifa6hid2c-eugeous-projects.vercel.app/)
+
+![image](https://github.com/user-attachments/assets/f0bd0172-3054-4284-a89a-fa2be9e6901e)
+
 
 ## Getting Started
 
