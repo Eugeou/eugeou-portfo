@@ -1,11 +1,12 @@
 "use client";
 import Header from "@/components/header/Header";
-import Image from "next/image";
-import React, { useState } from "react";
-import { motion, useInView, useScroll, useSpring } from "framer-motion";
+// import Image from "next/image";
+import React from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
 import Hero from "@/components/hero/Hero";
 import AboutMe from "@/components/about-me/AboutMe";
 import Footer from "@/components/footer/Footer";
+import MySkillsSection from "@/components/my-skill/MySkillSection";
 
 export default function Home() {
 
@@ -33,6 +34,9 @@ export default function Home() {
 
       {/* About me */}
       <AboutMe/>
+
+      {/* My Skills */}
+      <MySkillsSection/>
 
       {/* Footer */}
       <Footer/>

@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+// import Image from "next/image";
 import { AiFillForward } from "react-icons/ai";
+import Image from "next/image";
 
 const images = [
     "/assets/project-03.png",
@@ -81,7 +82,7 @@ const Hero = () => {
                 <motion.h1
                     className="font-bold text-black ml-16"
                     style ={{fontSize: "4rem"}}
-                    initial={{ opacity: 0, x: -1000 }}
+                    initial={{ opacity: 0, x: -100 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.9 }}
                 >
@@ -90,7 +91,7 @@ const Hero = () => {
                 <motion.h3
                     className="font-medium text-gray-500 mt-2 ml-16"
                     style ={{fontSize: "2.5rem"}}
-                    initial={{ opacity: 0, x: -1000 }}
+                    initial={{ opacity: 0, x: -100 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.9, delay: 0.2 }}
                 >
@@ -99,7 +100,7 @@ const Hero = () => {
                 <motion.button
                     className="bg-red-600 flex justify-between items-center text-center text-xl space-x-3 text-white font-semibold py-3 px-5 mt-6 ml-16"
                     style={{ borderRadius: "24px"}}
-                    initial={{ opacity: 0, x: -1000 }}
+                    initial={{ opacity: 0, x: -100 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
                     whileHover={
@@ -150,9 +151,11 @@ const Hero = () => {
                     transition={fadeUp.transition}
                     className="w-full h-1/3 overflow-hidden relative"
                     >
-                    <img
+                    <Image
                         src={src}
                         alt={`Image ${index + 1}`}
+                        width={500}
+                        height={300}
                         className="w-full h-full object-cover border border-black rounded-2xl"
                     />
                     </motion.div>
@@ -170,9 +173,11 @@ const Hero = () => {
                     transition={fadeDown.transition}
                     className="w-full h-1/3 overflow-hidden relative"
                     >
-                    <img
+                    <Image
                         src={src}
                         alt={`Image ${index + 1}`}
+                        width={500}
+                        height={300}
                         className="w-full h-full object-cover border border-black rounded-2xl"
                     />
                     </motion.div>
