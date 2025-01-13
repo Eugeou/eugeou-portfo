@@ -70,10 +70,12 @@ const Hero = () => {
     
     return (
         <motion.div
+            id="Home"
             className="flex justify-between items-center h-screen p-4 bg-gradient-to-r from-[#f5f5f9] to-[#e1e2f7]"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
+            layout
         >
             <div className="w-1/2 justify-start  items-start flex flex-col">
                 <motion.h1

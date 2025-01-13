@@ -16,7 +16,7 @@ const tabs = [
       id: 1,
       label: "Education",
       icon: <FaGraduationCap />,
-      content: "I am currently pursuing a Bachelor's degree in Information Technology. My focus is on Web Development and Software Engineering.",
+      content: "I am currently pursuing a Bachelor's degree at The University of Information Technology. My focus is on Web Development and Software Engineering.",
     },
     {
       id: 2,
@@ -49,10 +49,12 @@ const AboutMe = () => {
 
     return (
         <motion.div
+            id="AboutMe"
             ref={about_ref}
             initial={{ opacity: 0, y: 500 }}
             animate={{ opacity: isInHeroView ? 1 : 0, y: isInHeroView ? 0 : 500 }}
             transition={{ duration: 0.9 }}
+            layout
             className="flex flex-col items-center h-screen">
             <div className="relative bg-red-500 text-white py-4 overflow-hidden">
                 {/* Background Gradient */}
@@ -100,7 +102,7 @@ const AboutMe = () => {
                         />
                     </motion.div>
                     <motion.div className="p-3 border-2 border-red-600 rounded-3xl w-5/7 h-[450px] ml-12 flex flex-col justify-center items-center"
-                        initial={{ opacity: 0, x: -500 }}
+                        initial={{ opacity: 0, x: -100 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.9, delay: 0.5 }}
                     >
