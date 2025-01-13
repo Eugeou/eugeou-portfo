@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { motion, useInView, useScroll, useSpring } from "framer-motion";
 import Hero from "@/components/hero/Hero";
 import AboutMe from "@/components/about-me/AboutMe";
+import Footer from "@/components/footer/Footer";
 
 export default function Home() {
 
@@ -19,7 +20,7 @@ export default function Home() {
     <div className="">
       {/* Progress bar */}
       <motion.div 
-        className="w-full h-1 bg-gradient-to-r from-[#D2E2FF] to-[#26127C]" 
+        className="w-full h-2 bg-gradient-to-r from-[#90b4f7] to-[#2f14a8]" 
         style={{scaleX, width: "100%", transformOrigin: "0%", padding: "3px", position: "fixed", zIndex: 999}} 
         transition={{ duration: 0.5 }}
       ></motion.div>
@@ -32,6 +33,9 @@ export default function Home() {
 
       {/* About me */}
       <AboutMe/>
+
+      {/* Footer */}
+      <Footer/>
     </div>
   );
 }

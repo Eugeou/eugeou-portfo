@@ -67,7 +67,7 @@ const AboutMe = () => {
                     animate={{ x: "100%" }}
                     transition={{
                     repeat: Infinity,
-                    duration: 20,
+                    duration: 25,
                     ease: "linear",
                     }}
                 >
