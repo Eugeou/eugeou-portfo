@@ -55,10 +55,10 @@ const languageCards = [
 const frameworkCards = [
     {
         id: "react",
-        title: "React",
-        bgColor: "#d1d5db",
+        title: "ReactJs",
+        bgColor: "#f4dcdd",
         imgSrc: "/assets/reactjs.png",
-        description: "React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies.",
+        description: "ReactJs is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies.",
     },
     {
         id: "reactnative",
@@ -121,11 +121,11 @@ const MySkillsSection = () => {
                     transition={{
                     repeat: Infinity,
                     repeatType: "loop",
-                    duration: 30,
+                    duration: 50,
                     ease: "linear",
                     }}
                 >
-                    {Array(5)
+                    {Array(10)
                     .fill(jobs)
                     .flat()
                     .map((job, index) => (

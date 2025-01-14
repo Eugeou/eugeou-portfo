@@ -61,10 +61,10 @@ const Hero = () => {
         initial: { opacity: 1, y: -100 },
         animate: {
           //opacity: [1, 0], // Biến mất dần
-          y: ["0%", "50%"],
+          y: ["0%", "100%"],
         },
         transition: {
-          duration: 10, // Thời gian một vòng chuyển động
+          duration: 20, // Thời gian một vòng chuyển động
           repeat: Infinity,
           ease: "linear",
         },
@@ -114,6 +114,12 @@ const Hero = () => {
                             border: "1px solid #E6212B"
                         }
                     }
+                    onClick={() => {
+                        window.scrollTo({
+                            top: window.innerHeight,
+                            behavior: "smooth",
+                        });
+                    }}
                     name="Explore"
                 >
                     <p>Explore</p>
@@ -146,7 +152,7 @@ const Hero = () => {
                 
                 {/* Cột 1 */}
                 <div className="relative flex flex-col space-y-4">
-                {Array(5).fill(imagesUp).flat().map((src, index) => (
+                {Array(6).fill(imagesUp).flat().map((src, index) => (
                     <motion.div
                     key={`col1-${index}`}
                     variants={fadeUp} // Animation fade và tịnh tiến lên trên
@@ -168,7 +174,7 @@ const Hero = () => {
 
                 {/* Cột 2 */}
                 <div className="relative flex flex-col space-y-4">
-                {Array(5).fill(imagesDown).flat().map((src, index) => (
+                {Array(6).fill(imagesDown).flat().map((src, index) => (
                     <motion.div
                     key={`col2-${index}`}
                     variants={fadeDown} // Animation fade và tịnh tiến xuống dưới

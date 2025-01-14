@@ -79,9 +79,9 @@ const AboutMe = () => {
                     ]} }
                     transition={{
                         x: {
-                            repeat: Infinity, // Loop the animation infinitely
+                            repeat: Infinity, 
                             repeatType: "loop",
-                            duration: 45, // Time taken to complete one scroll cycle
+                            duration: 50,
                             ease: "linear",
                           },
                     }}
