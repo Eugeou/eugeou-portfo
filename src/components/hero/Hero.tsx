@@ -91,7 +91,7 @@ const Hero = () => {
                 >
                     Hi everyone, welcome <br/>to <span className="text-red-600">my Portfolio page</span>!
                 </motion.h1>
-                <motion.h3
+                <motion.h2
                     className="font-medium text-gray-500 mt-2 ml-16"
                     style ={{fontSize: "2.5rem"}}
                     initial={{ opacity: 0, x: -100 }}
@@ -99,7 +99,7 @@ const Hero = () => {
                     transition={{ duration: 0.9, delay: 0.2 }}
                 >
                     Let’s visit around to know more <br/>about me!
-                </motion.h3>
+                </motion.h2>
                 <motion.button
                     className="bg-red-600 flex justify-between items-center text-center text-xl space-x-3 text-white font-semibold py-3 px-5 mt-6 ml-16"
                     style={{ borderRadius: "24px"}}
@@ -114,6 +114,7 @@ const Hero = () => {
                             border: "1px solid #E6212B"
                         }
                     }
+                    name="Explore"
                 >
                     <p>Explore</p>
                     <AiFillForward />

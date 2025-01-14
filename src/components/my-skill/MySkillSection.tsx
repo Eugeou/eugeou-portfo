@@ -108,7 +108,7 @@ const MySkillsSection = () => {
             animate={{ opacity: isInMySkillSectionView ? 1 : 0, y: isInMySkillSectionView ? 0 : 500 }}
             transition={{ duration: 0.9 }}
             layout
-            className="flex flex-col items-center h-screen bg-gradient-to-r from-[#f5f5f9] to-[#e1e2f7]">
+            className="flex flex-col items-center overflow-hidden h-screen bg-gradient-to-r from-[#f5f5f9] to-[#e1e2f7]">
             <div className="relative bg-red-500 text-white py-3 overflow-hidden">
                 {/* Background Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-red-300 to-blue-500 opacity-25"></div>
@@ -120,11 +120,12 @@ const MySkillsSection = () => {
                     animate={{ translateX: '50%' }}
                     transition={{
                     repeat: Infinity,
-                    duration: 35,
+                    repeatType: "loop",
+                    duration: 30,
                     ease: "linear",
                     }}
                 >
-                    {Array(4)
+                    {Array(5)
                     .fill(jobs)
                     .flat()
                     .map((job, index) => (

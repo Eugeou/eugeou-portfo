@@ -55,7 +55,7 @@ const AboutMe = () => {
             animate={{ opacity: isInAMSectionView ? 1 : 0, y: isInAMSectionView ? 0 : 500 }}
             transition={{ duration: 0.9 }}
             layout
-            className="flex flex-col items-center h-screen bg-gradient-to-r from-[#f5f5f9] to-[#e1e2f7]">
+            className="flex flex-col overflow-hidden items-center h-screen bg-gradient-to-r from-[#f5f5f9] to-[#e1e2f7]">
 
             <div className="relative bg-red-500 text-white py-4 overflow-hidden">
                 {/* Background Gradient */}
@@ -63,29 +63,59 @@ const AboutMe = () => {
 
                 {/* Scrolling Text */}
                 <motion.div
-                    className="flex space-x-8 items-center"
-                    initial={{ translateX: 0 }}
-                    animate={{ translateX: '50%' }}
+                    className="flex relative w-full before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-10 before:content-[''] after:absolute after:right-0 after:top-0 after:h-full after:w-10 after:content-['']"
+                    // initial={{ translateX: "0%" }}
+                    // animate={{ translateX: '50%' }}
+                    // transition={{
+                    // repeat: Infinity,
+                    // repeatType: "loop",
+                    // duration: 10,
+                    // ease: "linear",
+                    
+                    // }}
+                    animate={ { x: [0, "100%"
+
+
+                    ]} }
                     transition={{
-                    repeat: Infinity,
-                    duration: 25,
-                    ease: "linear",
+                        x: {
+                            repeat: Infinity, // Loop the animation infinitely
+                            repeatType: "loop",
+                            duration: 45, // Time taken to complete one scroll cycle
+                            ease: "linear",
+                          },
                     }}
+                    
                 >
-                    {Array(4)
+                    {/* {Array(5)
                     .fill(jobs)
-                    .flat()
-                    .map((job, index) => (
+                    .flat() */}
+                    {/* {jobs.map((job, index) => (
                     
                         <div
-                        key={index}
-                        className="flex items-center space-x-8 text-lg font-semibold ml-4"
-                        >
-                        <span className="text-nowrap">{job}</span>
-                        <span className="text-2xl">&rarr;</span>
+                            key={index}
+                            className="flex items-center space-x-8 text-lg font-semibold ml-4"
+                            >
+                            <span className="text-nowrap">{job}</span>
+                            <span className="text-2xl">&rarr;</span>
                         </div>
                     
+                    ))} */}
+
+                    {[...new Array(9)].fill(0).map((_, index) => (
+                        <React.Fragment key={index}>
+                            {jobs.map((job, index) => (
+                            <div
+                            key={index}
+                            className="flex items-center space-x-8 text-lg font-semibold ml-4"
+                            >
+                                <span className="text-nowrap">{job}</span>
+                                <span className="text-2xl">&rarr;</span>
+                            </div>
+                            ))}
+                        </React.Fragment>
                     ))}
+
 
 
                 </motion.div>

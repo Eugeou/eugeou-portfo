@@ -129,6 +129,7 @@ const Footer = () => {
                             setActiveSection("Home");
                         }
                     }}
+                    aria-label="ScrollTop"
                 >
                     <AiFillCaretUp />
                 </motion.button>
