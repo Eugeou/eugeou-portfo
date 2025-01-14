@@ -38,6 +38,8 @@ export default function Home() {
       {/* My Skills */}
       <MySkillsSection/>
 
+      <div className="h-16 w-full bg-gradient-to-r from-[#f5f5f9] to-[#e1e2f7]"></div>
+
       {/* Footer */}
       <Footer/>
     </div>
