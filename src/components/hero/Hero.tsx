@@ -5,14 +5,17 @@ import { motion } from "framer-motion";
 import { AiFillForward } from "react-icons/ai";
 import Image from "next/image";
 
-const images = [
+const imagesUp = [
     "/assets/project-03.png",
     "/assets/project-04.png",
     "/assets/project-05.png",
+];
+
+const imagesDown = [
     "/assets/project-06.png",
     "/assets/project-01.png",
     "/assets/project-02.png",
-];
+]
 
 const Hero = () => {
 
@@ -45,10 +48,10 @@ const Hero = () => {
         initial: { opacity: 1, y: 100 },
         animate: {
           //opacity: [1, 0], // Biến mất dần
-          y: ["5%", "-100%"], // Chạy lên trên
+          y: ["0%", "-100%"],
         },
         transition: {
-          duration: 15, // Thời gian một vòng chuyển động
+          duration: 20, // Thời gian một vòng chuyển động
           repeat: Infinity,
           ease: "linear",
         },
@@ -61,7 +64,7 @@ const Hero = () => {
           y: ["0%", "50%"],
         },
         transition: {
-          duration: 15, // Thời gian một vòng chuyển động
+          duration: 10, // Thời gian một vòng chuyển động
           repeat: Infinity,
           ease: "linear",
         },
@@ -142,7 +145,7 @@ const Hero = () => {
                 
                 {/* Cột 1 */}
                 <div className="relative flex flex-col space-y-4">
-                {images.slice(0, 3).map((src, index) => (
+                {Array(5).fill(imagesUp).flat().map((src, index) => (
                     <motion.div
                     key={`col1-${index}`}
                     variants={fadeUp} // Animation fade và tịnh tiến lên trên
@@ -164,7 +167,7 @@ const Hero = () => {
 
                 {/* Cột 2 */}
                 <div className="relative flex flex-col space-y-4">
-                {images.slice(3, 6).map((src, index) => (
+                {Array(5).fill(imagesDown).flat().map((src, index) => (
                     <motion.div
                     key={`col2-${index}`}
                     variants={fadeDown} // Animation fade và tịnh tiến xuống dưới

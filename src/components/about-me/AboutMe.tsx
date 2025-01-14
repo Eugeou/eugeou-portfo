@@ -56,6 +56,7 @@ const AboutMe = () => {
             transition={{ duration: 0.9 }}
             layout
             className="flex flex-col items-center h-screen bg-gradient-to-r from-[#f5f5f9] to-[#e1e2f7]">
+
             <div className="relative bg-red-500 text-white py-4 overflow-hidden">
                 {/* Background Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-red-300 to-blue-500 opacity-25"></div>
@@ -63,8 +64,8 @@ const AboutMe = () => {
                 {/* Scrolling Text */}
                 <motion.div
                     className="flex space-x-8 items-center"
-                    initial={{ x: "-100%" }}
-                    animate={{ x: "100%" }}
+                    initial={{ translateX: 0 }}
+                    animate={{ translateX: '50%' }}
                     transition={{
                     repeat: Infinity,
                     duration: 25,
@@ -75,6 +76,7 @@ const AboutMe = () => {
                     .fill(jobs)
                     .flat()
                     .map((job, index) => (
+                    
                         <div
                         key={index}
                         className="flex items-center space-x-8 text-lg font-semibold ml-4"
@@ -82,7 +84,10 @@ const AboutMe = () => {
                         <span className="text-nowrap">{job}</span>
                         <span className="text-2xl">&rarr;</span>
                         </div>
+                    
                     ))}
+
+
                 </motion.div>
             </div>
             <div className="flex flex-col items-center h-screen p-4 px-10">

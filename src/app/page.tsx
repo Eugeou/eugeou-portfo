@@ -21,7 +21,7 @@ export default function Home() {
     <div className="">
       {/* Progress bar */}
       <motion.div 
-        className="w-full h-2 bg-gradient-to-r from-[#90b4f7] to-[#2f14a8]" 
+        className="w-full h-1 bg-gradient-to-r from-[#90b4f7] to-[#2f14a8]" 
         style={{scaleX, width: "100%", transformOrigin: "0%", padding: "3px", position: "fixed", zIndex: 999}} 
         transition={{ duration: 0.5 }}
       ></motion.div>
