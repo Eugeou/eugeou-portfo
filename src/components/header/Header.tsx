@@ -3,12 +3,20 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
+const menuItems = [
+  { id: "Home", label: "Home" },
+  { id: "AboutMe", label: "About me" },
+  { id: "MySkills", label: "My Skills" },
+  { id: "Experience", label: "Experience" },
+  { id: "Projects", label: "Projects" },
+  { id: "Footer", label: "Contact me" },
+];
+
 const Header = () => {
   const [activeSection, setActiveSection] = useState<string>("Home");
-
-  const handleScroll = () => {
+  const sections = ["Home", "AboutMe", "MySkills", "Experience", "Projects", "ContactMe"];
+  const handleScroll = () => {  
     
-    const sections = ["Home", "AboutMe", "MySkills", "Experience", "Projects", "ContactMe"];
     sections.forEach((sectionId) => {
       const element = document.getElementById(sectionId);
       if (element) {
@@ -25,17 +33,9 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const menuItems = [
-    { id: "Home", label: "Home" },
-    { id: "AboutMe", label: "About me" },
-    { id: "MySkills", label: "My Skills" },
-    { id: "Experience", label: "Experience" },
-    { id: "Projects", label: "Projects" },
-    { id: "Footer", label: "Contact me" },
-  ];
-
+  //bg-gradient-to-r from-[#E6212B] to-[#801218]
   return (
-    <header className="flex justify-between items-center bg-gradient-to-r from-[#E6212B] to-[#801218] p-4 w-full fixed top-0 z-10">
+    <header className="flex justify-between items-center border-b border-b-[rgb(200,203,211)] bg-white opacity-90 p-4 w-full fixed top-0 z-10">
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
