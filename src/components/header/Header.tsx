@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import FlipClock from "../flip-clock/flip-clock";
 
 const menuItems = [
   { id: "Home", label: "Home" },
@@ -41,20 +42,7 @@ const Header = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.9 }}
       >
-        <Image
-          src="/assets/logo.png"
-          alt="Logo"
-          width={50}
-          height={50}
-          className="cursor-pointer ml-2"
-          onClick={() => {
-            const section = document.getElementById("Home");
-            if (section) {
-              section.scrollIntoView({ behavior: "smooth" });
-              setActiveSection("Home");
-            }
-          }}
-        />
+        <FlipClock />
       </motion.div>
 
       <motion.div
