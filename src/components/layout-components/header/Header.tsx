@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import FlipClock from "../flip-clock/flip-clock";
+import FlipClock from "../../shared-components/flip-clock/flip-clock";
 
 const menuItems = [
   { id: "Home", label: "Home" },

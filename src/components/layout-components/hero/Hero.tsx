@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import FlipClock from "../flip-clock/flip-clock";
+import FlipClock from "../../shared-components/flip-clock/flip-clock";
 
 const Hero = () => {
   // const fadeUp = {
@@ -55,7 +55,7 @@ const Hero = () => {
           opacity={0.4}
         />
       </div>
-      <div className="w-1/2 justify-start items-start flex flex-col bg-[url('/assets/railways/border.png')] bg-cover bg-no-repeat bg-center bg-opacity-40 h-80 z-10 p-2 rounded-xl">
+      <div className="w-1/2 justify-start items-start flex flex-col bg-[url('/assets/railways/border.png')] bg-cover bg-no-repeat bg-center bg-opacity-40 h-96 z-10 p-2 rounded-xl">
         {/*
         <motion.button
           className="bg-red-600 flex justify-between items-center text-center text-xl space-x-3 text-white font-semibold py-3 px-5 mt-6 ml-16"
@@ -80,15 +80,15 @@ const Hero = () => {
           <p>Explore</p>
           <AiFillForward />
         </motion.button> */}
-        
+
         <div className="flex relative items-center justify-between bg-white w-full h-full rounded-sm bg-opacity-20">
           <>
             <Image
               src="/assets/railways/tall-barrier.png"
               alt="bg-hero"
-              width={180}
+              width={200}
               height={500}
-              className="mb-24 -left-8 relative"
+              className="mb-24 -left-9 relative"
             />
           </>
           <div className="flex flex-col items-start justify-start absolute left-20 top-[70px] mt-2 rounded-xl">
@@ -107,7 +107,8 @@ const Hero = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.9, delay: 0.2 }}
             >
-              This is my playground, try something new <br /> Also, I share or show my knowledge <br /> and experience here.
+              This is my playground, try something new <br /> Also, I share or
+              show my knowledge <br /> and experience here.
             </motion.h2>
           </div>
           <div className="relative overflow-hidden h-full">

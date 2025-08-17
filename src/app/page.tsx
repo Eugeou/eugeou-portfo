@@ -1,12 +1,12 @@
 "use client";
-import Header from "@/components/header/Header";
+import Header from "@/components/layout-components/header/Header";
 // import Image from "next/image";
 import React from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
-import Hero from "@/components/hero/Hero";
-import AboutMe from "@/components/about-me/AboutMe";
-import Footer from "@/components/footer/Footer";
-import MySkillsSection from "@/components/my-skill/MySkillSection";
+import Hero from "@/components/layout-components/hero/Hero";
+import AboutMe from "@/components/layout-components/about-me/AboutMe";
+import Footer from "@/components/layout-components/footer/Footer";
+import MySkillsSection from "@/components/layout-components/my-skill/MySkillSection";
 import Image from "next/image";
 
 export default function Home() {
@@ -21,12 +21,12 @@ export default function Home() {
     <div className="">
       {/* Progress bar */}
       <motion.div
-        className="w-full h-[2px] bg-gradient-to-r from-[#90b4f7] to-[#2f14a8]"
+        className="w-full h-[1px] bg-gradient-to-r from-[#f0c39d] to-[#d68605]"
         style={{
           scaleX,
           width: "100%",
           transformOrigin: "0%",
-          padding: "3px",
+          padding: "2px",
           position: "fixed",
           zIndex: 999,
         }}
