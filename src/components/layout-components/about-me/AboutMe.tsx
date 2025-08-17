@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { AboutMeContent } from "@/components/shared-components/about-me-content";
 import { ElectricTrain } from "@/components/shared-components/train/electric-train";
-import { CatTrain } from "@/components/shared-components/train/cat-train";
 
 const AboutMe = () => {
   const about_ref = useRef<HTMLDivElement>(null);
