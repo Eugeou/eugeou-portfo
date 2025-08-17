@@ -35,53 +35,83 @@ header h1 {
 .flipClock {
   display: flex;
   justify-content: space-between;
-  width: 100px; /* 3 * 12px + some spacing */
-  padding: 4px;
-  border-radius: 10px;
-  border: 1px solid #e2e8f0;
+  width: var(--flip-clock-width, 200px);
+  height: var(--flip-clock-height, 60px);
+  padding: var(--flip-clock-padding, 8px);
+  border-radius: var(--flip-clock-border-radius, 12px);
   background: white;
-  box-shadow: 0px 2px 2px -2px grey;
+  opacity: var(--flip-clock-opacity, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   position: relative;
 }
 
-.flipClock::before {
+.flipClock::after {
   content: '';
   position: absolute;
-  width: 104px;
-  height: 42px;
-  padding: 4px;
-  background: linear-gradient(45deg, rgb(15, 23, 42), rgb(255, 64, 0));
-  border-radius: 8px;
-  z-index: -1;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e0e0e0, transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Colon styling */
+.flipClock .colon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: var(--flip-clock-colon-width, 10px);
+  height: var(--flip-clock-colon-height, 44px);
+  margin: 0px;
+  color: #333;
+  font-size: var(--flip-clock-colon-font-size, 1.2em);
+  font-weight: bold;
+}
+
+.flipClock .colon::before,
+.flipClock .colon::after {
+  content: '';
+  width: var(--flip-clock-colon-dot-size, 4px);
+  height: var(--flip-clock-colon-dot-size, 4px);
+  background-color: #333;
+  border-radius: 50%;
+  margin: 2px 0;
 }
 
 .flipUnitContainer {
   display: block;
   position: relative;
-  width: 24px;
-  height: 32px;
+  width: var(--flip-clock-unit-width, 40px);
+  height: var(--flip-clock-unit-height, 44px);
   perspective-origin: 50% 50%;
-  perspective: 50px;
-  background-color: white;
-  border-radius: 1px;
-  box-shadow: 0px 2px 2px -2px grey;
+  perspective: 100px;
+  background-color: #1a1a1a;
+  border-radius: var(--flip-clock-unit-border-radius, 8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  margin: 0 var(--flip-clock-unit-margin, 4px);
 }
 
-.upperCard, .lowerCard {
+.upperCard,
+.lowerCard {
   display: flex;
   position: relative;
   justify-content: center;
   width: 100%;
   height: 50%;
   overflow: hidden;
-  border: 0.2px solid whitesmoke;
+  border: 0.2px solid #333;
 }
 
-.upperCard span, .lowerCard span {
-  font-size: 0.8em;
+.upperCard span,
+.lowerCard span {
+  font-size: var(--flip-clock-digit-font-size, 1em);
   font-family: 'Droid Sans Mono', monospace;
-  font-weight: lighter;
-  color: #333333; /* lighten(black, 20%) */
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .upperCard {
@@ -119,9 +149,10 @@ header h1 {
 
 .flipCard span {
   font-family: 'Droid Sans Mono', monospace;
-  font-size: 0.8em;
-  font-weight: lighter;
-  color: #333333;
+  font-size: var(--flip-clock-digit-font-size, 1em);
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .flipCard.unfold {
@@ -129,11 +160,11 @@ header h1 {
   align-items: flex-start;
   transform-origin: 50% 0%;
   transform: rotateX(180deg);
-  background-color: white;
-  border-bottom-left-radius: 1px;
-  border-bottom-right-radius: 1px;
-  border: 0.1px solid whitesmoke;
-  border-top: 0.1px solid whitesmoke;
+  background-color: #1a1a1a;
+  border-bottom-left-radius: var(--flip-clock-unit-border-radius, 8px);
+  border-bottom-right-radius: var(--flip-clock-unit-border-radius, 8px);
+  border: 0.1px solid #333;
+  border-top: 0.1px solid #333;
 }
 
 .flipCard.unfold span {
@@ -145,11 +176,11 @@ header h1 {
   align-items: flex-end;
   transform-origin: 50% 100%;
   transform: rotateX(0deg);
-  background-color: white;
-  border-top-left-radius: 1px;
-  border-top-right-radius: 1px;
-  border: 0.1px solid whitesmoke;
-  border-bottom: 0.1px solid whitesmoke;
+  background-color: #1a1a1a;
+  border-top-left-radius: var(--flip-clock-unit-border-radius, 8px);
+  border-top-right-radius: var(--flip-clock-unit-border-radius, 8px);
+  border: 0.1px solid #333;
+  border-bottom: 0.1px solid #333;
 }
 
 .flipCard.fold span {
@@ -170,6 +201,7 @@ header h1 {
   0% {
     transform: rotateX(0deg);
   }
+
   100% {
     transform: rotateX(-180deg);
   }
@@ -179,6 +211,7 @@ header h1 {
   0% {
     transform: rotateX(180deg);
   }
+
   100% {
     transform: rotateX(0deg);
   }

@@ -36,7 +36,7 @@ const Header = () => {
 
   //bg-gradient-to-r from-[#E6212B] to-[#801218]
   return (
-    <header className="flex justify-between items-center border-b border-b-[rgb(200,203,211)] bg-white opacity-90 p-4 w-full fixed top-0 z-10">
+    <header className="flex justify-between items-center border-b border-b-[rgb(200,203,211)] bg-white opacity-60 w-full fixed top-0 z-20">
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
@@ -55,10 +55,10 @@ const Header = () => {
           {menuItems.map((item) => (
             <motion.li
               key={item.id}
-              className={`cursor-pointer font-semibold p-2 px-5 ${
+              className={`cursor-pointer font-semibold p-2 px-2 ${
                 activeSection === item.id
-                  ? "bg-white text-[#E6212B] rounded-2xl"
-                  : "text-white"
+                  ? "bg-white text-[#ff8c00] rounded-2xl"
+                  : "text-black"
               }`}
               whileHover={{
                 scale: 1.05,
