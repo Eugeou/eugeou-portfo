@@ -1,94 +1,35 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-// import Image from "next/image";
-import { AiFillForward } from "react-icons/ai";
 import Image from "next/image";
 import FlipClock from "../flip-clock/flip-clock";
 
-const imagesUp = [
-  //PCS
-  "/assets/hero-imgs/img-slide-up/pcs-01.png",
-  "/assets/hero-imgs/img-slide-up/pcs-02.png",
-  "/assets/hero-imgs/img-slide-up/pcs-03.png",
-  //"/assets/hero-imgs/img-slide-up/pcs-04.png",
-  //CRS
-  "/assets/hero-imgs/img-slide-up/crs-01.png",
-  "/assets/hero-imgs/img-slide-up/crs-02.png",
-  "/assets/hero-imgs/img-slide-up/crs-03.png",
-  "/assets/hero-imgs/img-slide-up/crs-04.png",
-  //"/assets/hero-imgs/img-slide-up/crs-05.png",
-  //BCS
-  "/assets/hero-imgs/img-slide-up/bcs-01.png",
-  "/assets/hero-imgs/img-slide-up/bcs-02.png",
-  "/assets/hero-imgs/img-slide-up/bcs-03.png",
-  //"/assets/hero-imgs/img-slide-up/bcs-04.png",
-];
-
-const imagesDown = [
-  //PRM
-  "/assets/hero-imgs/img-slide-down/prm-01.png",
-  "/assets/hero-imgs/img-slide-down/project-01.png",
-  "/assets/hero-imgs/img-slide-down/prm-02.png",
-  "/assets/hero-imgs/img-slide-down/project-02.png",
-  "/assets/hero-imgs/img-slide-down/prm-03.png",
-  "/assets/hero-imgs/img-slide-down/project-03.png",
-  "/assets/hero-imgs/img-slide-down/prm-04.png",
-  "/assets/hero-imgs/img-slide-down/project-04.png",
-  "/assets/hero-imgs/img-slide-down/prm-05.png",
-  "/assets/hero-imgs/img-slide-down/project-05.png",
-];
-
 const Hero = () => {
-  // const fadeAndTranslateUp = {
-  //     animate: {
-  //       y: ["0%", "-100%", "0%"], // Di chuyển từ giữa, lên trên, rồi quay lại
-  //       opacity: [1, 0, 1], // Biến mất dần khi ra khỏi biên trên
-  //     },
-  //     transition: {
-  //       duration: 6,
-  //       repeat: Infinity,
-  //       ease: "linear",
-  //     },
-  //   };
-
-  // const fadeAndTranslateDown = {
-  //     animate: {
-  //       y: ["0%", "100%", "0%"], // Di chuyển từ giữa, xuống dưới, rồi quay lại
-  //       opacity: [1, 0, 1], // Biến mất dần khi ra khỏi biên dưới
-  //     },
-  //     transition: {
-  //       duration: 6,
-  //       repeat: Infinity,
-  //       ease: "linear",
-  //     },
+  // const fadeUp = {
+  //   initial: { opacity: 1, y: 100 },
+  //   animate: {
+  //     //opacity: [1, 0],
+  //     y: ["0%", "-100%"],
+  //   },
+  //   transition: {
+  //     duration: 20,
+  //     repeat: Infinity,
+  //     ease: "linear",
+  //   },
   // };
 
-  const fadeUp = {
-    initial: { opacity: 1, y: 100 },
-    animate: {
-      //opacity: [1, 0],
-      y: ["0%", "-100%"],
-    },
-    transition: {
-      duration: 20,
-      repeat: Infinity,
-      ease: "linear",
-    },
-  };
-
-  const fadeDown = {
-    initial: { opacity: 1, y: -100 },
-    animate: {
-      //opacity: [1, 0],
-      y: ["0%", "100%"],
-    },
-    transition: {
-      duration: 20,
-      repeat: Infinity,
-      ease: "linear",
-    },
-  };
+  // const fadeDown = {
+  //   initial: { opacity: 1, y: -100 },
+  //   animate: {
+  //     //opacity: [1, 0],
+  //     y: ["0%", "100%"],
+  //   },
+  //   transition: {
+  //     duration: 20,
+  //     repeat: Infinity,
+  //     ease: "linear",
+  //   },
+  // };
 
   return (
     <motion.div

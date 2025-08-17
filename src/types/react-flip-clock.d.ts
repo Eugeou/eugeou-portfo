@@ -8,7 +8,7 @@ declare module 'react-flip-clock' {
     showLabels?: boolean;
     size?: 'small' | 'medium' | 'large';
     theme?: 'dark' | 'light';
-    [key: string]: any;
+    [key: string]: string | number | boolean;
   }
   
   const Clock: ComponentType<ClockProps>;

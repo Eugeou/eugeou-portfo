@@ -146,7 +146,8 @@ const FlipClock = ({
     return () => {
       clearInterval(timerID);
     };
-  }, [hours, minutes, seconds]); // dependencies needed for comparison
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hours, minutes, seconds]);
 
   // Create style object with CSS custom properties
   const clockStyle = {

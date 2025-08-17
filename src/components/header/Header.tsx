@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import FlipClock from "../flip-clock/flip-clock";
@@ -15,9 +14,15 @@ const menuItems = [
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState<string>("Home");
-  const sections = ["Home", "AboutMe", "MySkills", "Experience", "Projects", "ContactMe"];
-  const handleScroll = () => {  
-    
+  const sections = [
+    "Home",
+    "AboutMe",
+    "MySkills",
+    "Experience",
+    "Projects",
+    "ContactMe",
+  ];
+  const handleScroll = () => {
     sections.forEach((sectionId) => {
       const element = document.getElementById(sectionId);
       if (element) {
@@ -32,9 +37,9 @@ const Header = () => {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  //bg-gradient-to-r from-[#E6212B] to-[#801218]
   return (
     <header className="flex justify-between items-center border-b border-b-[rgb(200,203,211)] bg-white opacity-60 w-full fixed top-0 z-20">
       <motion.div
