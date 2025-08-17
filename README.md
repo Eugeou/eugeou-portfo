@@ -2,8 +2,7 @@ This is a [Next.js](https://nextjs.org) , TypeScript, Tailwind Css and Framer mo
 
 Visit my portfolio at: [Eugeou portfolio](https://eugeou-portfolio.vercel.app/)
 
-![image](https://github.com/user-attachments/assets/e4d920bc-df1c-4c84-b345-3c8de911a226)
-
+<img width="1902" height="870" alt="image" src="https://github.com/user-attachments/assets/e45db632-d512-43d8-9219-2c18bd54b986" />
 
 ## Getting Started
 
