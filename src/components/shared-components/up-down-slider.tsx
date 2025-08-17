@@ -1,4 +1,4 @@
-import { imagesDown, imagesUp } from "@/constants";
+import { imagesUp, imagesDown } from "@/constants";
 import { motion } from "framer-motion";
 import Image from "next/image";
 

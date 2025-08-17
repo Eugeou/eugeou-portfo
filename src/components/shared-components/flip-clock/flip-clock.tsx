@@ -1,26 +1,8 @@
 import { useState, useEffect } from "react";
 import "./flip-clock.css";
 import { useCheckMobile } from "@/hooks/use-check-mobile";
+import { FlipClockProps } from "@/types";
 
-// Props interface for the FlipClock component
-interface FlipClockProps {
-  width?: string;
-  height?: string;
-  padding?: string;
-  borderRadius?: string;
-  opacity?: number;
-  colonWidth?: string;
-  colonHeight?: string;
-  colonFontSize?: string;
-  colonDotSize?: string;
-  unitWidth?: string;
-  unitHeight?: string;
-  unitBorderRadius?: string;
-  unitMargin?: string;
-  digitFontSize?: string;
-}
-
-// function component
 const AnimatedCard = ({
   animation,
   digit,
@@ -35,7 +17,6 @@ const AnimatedCard = ({
   );
 };
 
-// function component
 const StaticCard = ({
   position,
   digit,
@@ -50,7 +31,6 @@ const StaticCard = ({
   );
 };
 
-// function component
 const FlipUnitContainer = ({
   digit,
   shuffle,
@@ -94,7 +74,6 @@ const FlipUnitContainer = ({
   );
 };
 
-// functional component
 const FlipClock = ({
   width = "200px",
   height = "60px",
@@ -120,9 +99,7 @@ const FlipClock = ({
   const isMobile = useCheckMobile();
 
   const updateTime = () => {
-    // get new date
     const time = new Date();
-    // set time units
     const newHours = time.getHours();
     const newMinutes = time.getMinutes();
     const newSeconds = time.getSeconds();
@@ -146,7 +123,6 @@ const FlipClock = ({
 
   useEffect(() => {
     const timerID = setInterval(updateTime, 50);
-
     return () => {
       clearInterval(timerID);
     };

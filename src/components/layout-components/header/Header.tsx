@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import FlipClock from "../../shared-components/flip-clock/flip-clock";
-import { menuItems, sections } from "@/constants";
 import { useCheckMobile } from "@/hooks/use-check-mobile";
+import { menuItems, sections } from "@/constants";
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState<string>("Home");

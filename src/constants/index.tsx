@@ -1,3 +1,6 @@
+import { FaGraduationCap, FaBullseye, FaSmile } from "react-icons/fa";
+import { BiUser } from "react-icons/bi";
+
 export const imagesUp = [
     //PCS
     "/assets/hero-imgs/img-slide-up/pcs-01.png",
@@ -47,4 +50,38 @@ export const menuItems = [
   { id: "Experience", label: "Experience" },
   { id: "Projects", label: "Projects" },
   { id: "ContactMe", label: "Contact me" },
+];
+
+export const aboutMeTabs = [
+  {
+    id: 0,
+    label: "Personal Info",
+    icon: <BiUser />,
+    content: "Hi guys, my name is Nguyen Hoang Minh Quan. I'm an under-graduated student of The University of Information Technology. And I also known as a Frontend Developer.",
+  },
+  {
+    id: 1,
+    label: "Education",
+    icon: <FaGraduationCap />,
+    content: "I am currently pursuing a Bachelor's degree at The University of Information Technology. My focus is on Web Development and Software Engineering.",
+  },
+  {
+    id: 2,
+    label: "Objective",
+    icon: <FaBullseye />,
+    content: "Diligent and motivated individual with a foundation in frontend development, seeking an internship to apply skills in UI programming. Eager to gain hands-on experience, contribute to a skilled team, and deepen expertise in building reliable, scalable solutions. ",
+  },
+  {
+    id: 3,
+    label: "My Hobby",
+    icon: <FaSmile />,
+    content: "I enjoy coding, playing games, watching cartoons, and exploring new technologies in my free time.",
+  },
+];
+
+export const myJobs = [
+    "Frontend Engineer",
+    "UI/UX Designer",
+    "Software Engineer",
+    "Frontend Developer",
 ];
