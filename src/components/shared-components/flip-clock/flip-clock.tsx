@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./flip-clock.css";
+import { useCheckMobile } from "@/hooks/use-check-mobile";
 
 // Props interface for the FlipClock component
 interface FlipClockProps {
@@ -54,10 +55,12 @@ const FlipUnitContainer = ({
   digit,
   shuffle,
   unit,
+  className = "",
 }: {
   digit: number;
   shuffle: boolean;
   unit: string;
+  className?: string;
 }) => {
   // assign digit values
   let currentDigit: string | number = digit;
@@ -82,7 +85,7 @@ const FlipUnitContainer = ({
   const animation1 = shuffle ? "fold" : "unfold";
   const animation2 = !shuffle ? "fold" : "unfold";
   return (
-    <div className={"flipUnitContainer"}>
+    <div className={`flipUnitContainer ${className}`}>
       <StaticCard position={"upperCard"} digit={currentDigit} />
       <StaticCard position={"lowerCard"} digit={previousDigit} />
       <AnimatedCard digit={digit1} animation={animation1} />
@@ -114,6 +117,7 @@ const FlipClock = ({
   const [minutesShuffle, setMinutesShuffle] = useState(true);
   const [seconds, setSeconds] = useState(0);
   const [secondsShuffle, setSecondsShuffle] = useState(true);
+  const isMobile = useCheckMobile();
 
   const updateTime = () => {
     // get new date
@@ -170,18 +174,22 @@ const FlipClock = ({
   return (
     <div className={"flipClock"} style={clockStyle}>
       <FlipUnitContainer unit={"hours"} digit={hours} shuffle={hoursShuffle} />
-      <div className="colon"></div>
+      <div className="colon" />
       <FlipUnitContainer
         unit={"minutes"}
         digit={minutes}
         shuffle={minutesShuffle}
       />
-      <div className="colon"></div>
-      <FlipUnitContainer
-        unit={"seconds"}
-        digit={seconds}
-        shuffle={secondsShuffle}
-      />
+      {!isMobile && (
+        <>
+          <div className="colon" />
+          <FlipUnitContainer
+            unit={"seconds"}
+            digit={seconds}
+            shuffle={secondsShuffle}
+          />
+        </>
+      )}
     </div>
   );
 };

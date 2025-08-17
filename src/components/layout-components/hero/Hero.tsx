@@ -3,47 +3,23 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import FlipClock from "../../shared-components/flip-clock/flip-clock";
+import { useCheckMobile } from "@/hooks/use-check-mobile";
 
 const Hero = () => {
-  // const fadeUp = {
-  //   initial: { opacity: 1, y: 100 },
-  //   animate: {
-  //     //opacity: [1, 0],
-  //     y: ["0%", "-100%"],
-  //   },
-  //   transition: {
-  //     duration: 20,
-  //     repeat: Infinity,
-  //     ease: "linear",
-  //   },
-  // };
-
-  // const fadeDown = {
-  //   initial: { opacity: 1, y: -100 },
-  //   animate: {
-  //     //opacity: [1, 0],
-  //     y: ["0%", "100%"],
-  //   },
-  //   transition: {
-  //     duration: 20,
-  //     repeat: Infinity,
-  //     ease: "linear",
-  //   },
-  // };
-
+  const isMobile = useCheckMobile();
   return (
     <motion.div
       id="Home"
-      className="flex justify-end items-center h-screen px-4 bg-gradient-to-r from-[#f5f5f9] to-[#e1e2f7] z-10"
+      className="flex flex-col md:flex-row justify-end items-center h-screen px-4 bg-gradient-to-r from-[#f5f5f9] to-[#e1e2f7] z-10"
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
       layout
     >
-      <div className="w-1/2 flex justify-center items-center h-40">
+      <div className="w-full md:w-1/2 flex flex-col md:flex-row justify-center items-center h-40">
         <FlipClock
-          width="500px"
-          height="150px"
+          width={isMobile ? "92%" : "65%"}
+          height="144px"
           padding="16px"
           borderRadius="20px"
           unitWidth="100px"
@@ -55,7 +31,7 @@ const Hero = () => {
           opacity={0.4}
         />
       </div>
-      <div className="w-1/2 justify-start items-start flex flex-col bg-[url('/assets/railways/border.png')] bg-cover bg-no-repeat bg-center bg-opacity-40 h-96 z-10 p-2 rounded-xl">
+      <div className="w-full md:w-1/2 justify-start items-start flex flex-col bg-[url('/assets/railways/border.png')] bg-cover bg-no-repeat bg-center bg-opacity-40 h-96 z-10 p-2 rounded-xl">
         {/*
         <motion.button
           className="bg-red-600 flex justify-between items-center text-center text-xl space-x-3 text-white font-semibold py-3 px-5 mt-6 ml-16"
@@ -91,7 +67,7 @@ const Hero = () => {
               className="mb-24 -left-9 relative"
             />
           </>
-          <div className="flex flex-col items-start justify-start absolute left-20 top-[70px] mt-2 rounded-xl">
+          <div className="flex flex-col items-start justify-start absolute left-20 top-[88px] mt-2 rounded-xl">
             <motion.h1
               className="font-bold text-[#ff8c00] z-10 text-3xl bg-white px-2 pt-1 rounded-[4px]"
               initial={{ opacity: 0, x: -100 }}
@@ -115,9 +91,9 @@ const Hero = () => {
             <Image
               src="/assets/gifs/railway-barrier.gif"
               alt="bg-hero"
-              width={360}
+              width={400}
               height={500}
-              className="z-10 mb-20 rounded-xl"
+              className="z-10 mb-16 rounded-xl"
             />
             <Image
               src="/assets/railways/barrier.png"
@@ -129,57 +105,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      {/* <div className="w-1/2 flex justify-center items-center">
-        <div className="grid grid-cols-2 gap-4 w-full h-screen overflow-hidden relative">
-          <div className="relative flex flex-col space-y-4">
-            {Array(10)
-              .fill(imagesUp)
-              .flat()
-              .map((src, index) => (
-                <motion.div
-                  key={`col1-${index}`}
-                  variants={fadeUp} // Animation fade và tịnh tiến lên trên
-                  initial="initial"
-                  animate="animate"
-                  transition={fadeUp.transition}
-                  className="w-full h-1/3 overflow-hidden relative"
-                >
-                  <Image
-                    src={src}
-                    alt={`Image ${index + 1}`}
-                    width={500}
-                    height={300}
-                    className="object-contain border border-gray-600 rounded-2xl"
-                  />
-                </motion.div>
-              ))}
-          </div>
-
-          <div className="relative flex flex-col space-y-4">
-            {Array(10)
-              .fill(imagesDown)
-              .flat()
-              .map((src, index) => (
-                <motion.div
-                  key={`col2-${index}`}
-                  variants={fadeDown} // Animation fade và tịnh tiến xuống dưới
-                  initial="initial"
-                  animate="animate"
-                  transition={fadeDown.transition}
-                  className="w-full h-1/3 overflow-hidden relative"
-                >
-                  <Image
-                    src={src}
-                    alt={`Image ${index + 1}`}
-                    width={500}
-                    height={300}
-                    className="object-contain border border-gray-600 rounded-2xl"
-                  />
-                </motion.div>
-              ))}
-          </div>
-        </div>
-      </div> */}
     </motion.div>
   );
 };

@@ -30,3 +30,21 @@ export const imagesDown = [
     "/assets/hero-imgs/img-slide-down/prm-05.png",
     "/assets/hero-imgs/img-slide-down/project-05.png",
   ];
+
+export const sections = [
+  "Home",
+  "AboutMe",
+  "MySkills",
+  "Experience",
+  "Projects",
+  "ContactMe",
+];
+
+export const menuItems = [
+  { id: "Home", label: "Home" },
+  { id: "AboutMe", label: "About me" },
+  { id: "MySkills", label: "My Skills" },
+  { id: "Experience", label: "Experience" },
+  { id: "Projects", label: "Projects" },
+  { id: "ContactMe", label: "Contact me" },
+];

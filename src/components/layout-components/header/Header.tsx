@@ -2,26 +2,12 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import FlipClock from "../../shared-components/flip-clock/flip-clock";
-
-const menuItems = [
-  { id: "Home", label: "Home" },
-  { id: "AboutMe", label: "About me" },
-  { id: "MySkills", label: "My Skills" },
-  { id: "Experience", label: "Experience" },
-  { id: "Projects", label: "Projects" },
-  { id: "Footer", label: "Contact me" },
-];
+import { menuItems, sections } from "@/constants";
+import { useCheckMobile } from "@/hooks/use-check-mobile";
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState<string>("Home");
-  const sections = [
-    "Home",
-    "AboutMe",
-    "MySkills",
-    "Experience",
-    "Projects",
-    "ContactMe",
-  ];
+  const isMobile = useCheckMobile();
   const handleScroll = () => {
     sections.forEach((sectionId) => {
       const element = document.getElementById(sectionId);
@@ -47,7 +33,17 @@ const Header = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.9 }}
       >
-        <FlipClock />
+        <FlipClock
+        width = {isMobile ? "100%" : "200px"}
+        height = "60px"
+        padding = "8px"
+        borderRadius = "12px"
+        unitWidth = "40px"
+        unitHeight = "44px"
+        unitBorderRadius = "8px"
+        unitMargin = "4px"
+        digitFontSize = "1em"
+         />
       </motion.div>
 
       <motion.div
