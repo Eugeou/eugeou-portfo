@@ -9,7 +9,8 @@ import { MenuIcon } from "../../shared-components/pixel-icons";
 const Header = () => {
   const [activeSection, setActiveSection] = useState<string>("Home");
   const [isTabletMenuOpen, setisTabletMenuOpen] = useState(false);
-  const { isTablet } = useCheckMobile();
+  const { isTablet, isMobile } = useCheckMobile();
+  const isTabletOrMobile = isTablet || isMobile;
   
   const handleScroll = () => {
     sections.forEach((sectionId) => {
@@ -51,7 +52,7 @@ const Header = () => {
           transition={{ duration: 0.9 }}
         >
           <FlipClock
-          width = {isTablet ? "100%" : "200px"}
+          width = {isTabletOrMobile ? "100%" : "200px"}
           height = "60px"
           padding = "8px"
           borderRadius = "12px"
@@ -63,7 +64,7 @@ const Header = () => {
            />
         </motion.div>
 
-        {isTablet ? (
+        {isTabletOrMobile ? (
           <motion.button
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
