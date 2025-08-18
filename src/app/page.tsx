@@ -10,7 +10,7 @@ import { ProgressBar } from "@/components/shared-components/progress-bar";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="mt-1">
       <ProgressBar />
 
       <div className="h-4 w-full z-0">

@@ -96,7 +96,7 @@ const FlipClock = ({
   const [minutesShuffle, setMinutesShuffle] = useState(true);
   const [seconds, setSeconds] = useState(0);
   const [secondsShuffle, setSecondsShuffle] = useState(true);
-  const isMobile = useCheckMobile();
+  const { isMobile } = useCheckMobile();
 
   const updateTime = () => {
     const time = new Date();

@@ -63,12 +63,12 @@ export const ElectricTrain = () => {
         // duration: 10,
         // ease: "linear",
         // }}
-        animate={{ x: ["-120%", "120%"] }}
+        animate={{ x: ["-240%", "240%"] }}
         transition={{
           x: {
             repeat: Infinity,
             repeatType: "loop",
-            duration: 8,
+            duration: 5,
             ease: "linear",
           },
         }}
@@ -83,14 +83,14 @@ export const ElectricTrain = () => {
           <Image
             src="/assets/railways/train-cabin.png"
             alt="dino"
-            width={400}
-            height={400}
+            width={340}
+            height={340}
           />
           <Image
             src="/assets/railways/train-cabin.png"
             alt="dino"
-            width={400}
-            height={400}
+            width={340}
+            height={340}
           />
           <Image
             src="/assets/railways/train-head.png"

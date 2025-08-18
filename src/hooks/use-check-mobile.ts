@@ -1,12 +1,27 @@
 import { useEffect, useState } from "react";
 
-export const useCheckMobile = () => {
-    const [isMobile, setIsMobile] = useState(false);
+interface ScreenSize {
+  isMobile: boolean;
+  isTablet: boolean;
+  isDesktop: boolean;
+}
+
+export const useCheckMobile = (): ScreenSize => {
+  const [screenSize, setScreenSize] = useState<ScreenSize>({
+    isMobile: false,
+    isTablet: false,
+    isDesktop: false,
+  });
 
   // Check screen size on mount and resize
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 732);
+      const width = window.innerWidth;
+      setScreenSize({
+        isMobile: width < 640, // sm breakpoint
+        isTablet: width >= 640 && width < 1024, // md breakpoint
+        isDesktop: width >= 1024, // lg breakpoint
+      });
     };
 
     checkScreenSize();
@@ -15,5 +30,5 @@ export const useCheckMobile = () => {
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
-  return isMobile;
+  return screenSize;
 };

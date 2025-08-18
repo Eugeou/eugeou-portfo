@@ -12,6 +12,7 @@
     "antd": "^5.23.0",
     "framer-motion": "^11.17.0",
     "next": "14.2.23",
+    "pixelarticons": "^1.8.1",
     "react": "^18",
     "react-dom": "^18",
     "react-flip-clock": "^1.0.4",

@@ -6,11 +6,11 @@ import { useCheckMobile } from "@/hooks/use-check-mobile";
 import { RightIntroHero } from "@/components/shared-components/right-intro-hero";
 
 const Hero = () => {
-  const isMobile = useCheckMobile();
+  const { isMobile } = useCheckMobile();
   return (
     <motion.div
       id="Home"
-      className="flex flex-col md:flex-row justify-end items-center h-screen px-4 bg-gradient-to-r from-[#f5f5f9] to-[#e1e2f7] z-10"
+      className="flex flex-col justify-center md:flex-row md:justify-between items-center h-screen bg-gradient-to-r px-4 from-[#f5f5f9] to-[#e1e2f7] z-10"
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}

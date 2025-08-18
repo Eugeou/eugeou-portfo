@@ -1,0 +1,30 @@
+import React from 'react';
+
+interface MenuIconProps {
+  size?: number;
+  color?: string;
+  className?: string;
+}
+
+export const MenuIcon: React.FC<MenuIconProps> = ({ 
+  size = 24, 
+  color = "currentColor", 
+  className = "" 
+}) => {
+  return (
+    <svg
+      id="grid"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      fill={color}
+      className={className}
+    >
+      <path d="m10,13H2v1h-1v8h1v1h8v-1h1v-8h-1v-1Zm-1,8H3v-6h6v6Z"/>
+      <path d="m10,2v-1H2v1h-1v8h1v1h8v-1h1V2h-1Zm-7,7V3h6v6H3Z"/>
+      <path d="m22,13h-8v1h-1v8h1v1h8v-1h1v-8h-1v-1Zm-1,8h-6v-6h6v6Z"/>
+      <path d="m22,2v-1h-8v1h-1v8h1v1h8v-1h1V2h-1Zm-1,7h-6V3h6v6Z"/>
+    </svg>
+  );
+};
