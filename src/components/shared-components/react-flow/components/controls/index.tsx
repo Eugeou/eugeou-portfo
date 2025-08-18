@@ -36,7 +36,7 @@ export const Controls = () => {
         interpolate: "smooth",
       },
     );
-  }, []);
+  }, [setViewport]);
 
   return (
     <div className="flex items-center gap-3">

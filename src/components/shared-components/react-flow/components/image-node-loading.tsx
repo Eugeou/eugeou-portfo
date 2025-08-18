@@ -1,7 +1,5 @@
 import Image from "next/image";
-type Props = {};
-
-export const ImageNodeLoading = ({}: Props) => {
+export const ImageNodeLoading = () => {
   return (
     <div className="w-full h-full relative rounded-md">
       <div

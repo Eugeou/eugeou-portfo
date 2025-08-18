@@ -57,7 +57,7 @@ export default function CWStudioProjectMain() {
   const onViewportChange = useCallback((viewport: Viewport) => {
     popoverControls.triggerAllPopoverControls();
     console.log("viewport", viewport);
-  }, []);
+  }, [popoverControls]);
 
   return (
     <div className="w-full h-[100svh] flex-1 flex relative bg-[var(--p-color-bg-fill-surface-active)]">

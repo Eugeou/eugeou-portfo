@@ -14,10 +14,10 @@ import { Handle, NodeProps, Position } from "@xyflow/react";
 import { DEFAULT_HANDLE_STYLE, NodeDataType } from "@/types";
 import { useState } from "react";
 import ButtonIcon from "../button-icon";
-``;
 import styles from "./image-node.module.css";
 import { mockEdges } from "../../data";
 import { EMainTabId } from "@/types";
+import Image from "next/image";
 type Props = NodeProps & {
   data: NodeDataType;
 };
@@ -75,7 +75,7 @@ Props) {
     if (data.value)
       return (
         <button className={styles.ImageNodeImgContainer}>
-          <img
+          <Image
             src={data.value}
             alt="Dropped image"
             className={styles.ImageNodeImg}
