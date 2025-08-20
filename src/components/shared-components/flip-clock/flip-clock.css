@@ -25,7 +25,7 @@ header {
 }
 
 header h1 {
-  font-family: 'Droid Sans Mono', monospace;
+  font-family: var(--flip-clock-font-family, 'Droid Sans Mono');
   font-weight: lighter;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -108,7 +108,7 @@ header h1 {
 .upperCard span,
 .lowerCard span {
   font-size: var(--flip-clock-digit-font-size, 1em);
-  font-family: 'Droid Sans Mono', monospace;
+  font-family: var(--flip-clock-font-family, 'Droid Sans Mono');
   font-weight: 600;
   color: white;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
@@ -148,7 +148,7 @@ header h1 {
 }
 
 .flipCard span {
-  font-family: 'Droid Sans Mono', monospace;
+  font-family: var(--flip-clock-font-family, 'Droid Sans Mono');
   font-size: var(--flip-clock-digit-font-size, 1em);
   font-weight: 600;
   color: white;

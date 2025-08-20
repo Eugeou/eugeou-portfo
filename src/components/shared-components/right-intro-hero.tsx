@@ -18,7 +18,7 @@ export const RightIntroHero = () => {
         </>
         <div className="flex flex-col items-start justify-start absolute left-10 md:left-16 top-[100px] mt-2 rounded-xl">
           <motion.h1
-            className="font-bold text-[#ff8c00] z-20 text-lg sm:text-2xl bg-white px-2 mt-12 md:mt-3 md:pt-2 rounded-[4px]"
+            className="font-bold text-[#ff8c00] z-20 text-lg sm:text-2xl bg-white px-2 mt-12 md:mt-3 md:pt-2 rounded-[4px] font-mono"
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9 }}
@@ -27,7 +27,7 @@ export const RightIntroHero = () => {
             <span className="text-red-600">My Portfolio station</span>
           </motion.h1>
           <motion.h2
-            className="font-medium text-gray-500 pt-2 z-20 bg-white px-2 pb-2 rounded-[4px] text-xs sm:text-lg"
+            className="font-medium text-gray-500 pt-2 z-20 bg-white px-2 pb-2 rounded-[4px] text-xs sm:text-lg font-mono"
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, delay: 0.2 }}

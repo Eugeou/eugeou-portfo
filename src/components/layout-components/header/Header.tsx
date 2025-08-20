@@ -62,6 +62,7 @@ const Header = () => {
           unitBorderRadius = "8px"
           unitMargin = "4px"
           digitFontSize = "1em"
+          fontFamily="'Press Start 2P', 'Courier New', monospace"
            />
         </motion.div>
 
@@ -82,7 +83,7 @@ const Header = () => {
             transition={{ duration: 0.9 }}
             className="flex justify-between items-center w-1/2 px-2"
           >
-            <motion.ul className="flex justify-between items-center w-full">
+            <motion.ul className="flex justify-between items-center w-full font-mono">
               {menuItems.map((item) => (
                 <motion.li
                   key={item.id}

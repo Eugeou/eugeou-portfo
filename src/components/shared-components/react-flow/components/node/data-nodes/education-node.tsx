@@ -36,8 +36,8 @@ export function EducationNode({ data }: Props) {
             </svg>
           </div>
           <div>
-            <h3 className="text-lg font-bold text-gray-800">Education</h3>
-            <p className="text-sm text-gray-600">Academic Background</p>
+            <h3 className="text-lg font-bold text-gray-800 font-mono">Education</h3>
+            <p className="text-sm text-gray-600 font-mono">Academic Background</p>
           </div>
         </div>
       </div>
@@ -65,7 +65,7 @@ export function EducationNode({ data }: Props) {
                 {/* Content */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between mb-1">
-                    <label className="text-xs font-semibold text-gray-600 uppercase tracking-wide">
+                    <label className="text-xs font-semibold text-gray-600 uppercase tracking-wide font-mono">
                       {formatFieldName(key)}
                     </label>
                     {isYears && (
@@ -76,12 +76,12 @@ export function EducationNode({ data }: Props) {
                   </div>
 
                   {isDescription ? (
-                    <p className="text-sm text-gray-700 leading-relaxed line-clamp-3">
+                    <p className="text-sm text-gray-700 leading-relaxed line-clamp-3 font-mono">
                       {String(value).slice(0, 96) + "..."}
                     </p>
                   ) : (
                     <p
-                      className={`text-sm font-medium text-gray-800 ${
+                      className={`text-sm font-medium text-gray-800 font-mono ${
                         isDate ? "font-mono" : ""
                       }`}
                     >

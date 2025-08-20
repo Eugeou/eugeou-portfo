@@ -89,6 +89,7 @@ const FlipClock = ({
   unitBorderRadius = "8px",
   unitMargin = "4px",
   digitFontSize = "1em",
+  fontFamily = "Droid Sans Mono",
 }: FlipClockProps) => {
   const [hours, setHours] = useState(0);
   const [hoursShuffle, setHoursShuffle] = useState(true);
@@ -145,6 +146,7 @@ const FlipClock = ({
     "--flip-clock-unit-margin": unitMargin,
     "--flip-clock-digit-font-size": digitFontSize,
     "--flip-clock-opacity": opacity,
+    "--flip-clock-font-family": fontFamily,
   } as React.CSSProperties;
 
   return (

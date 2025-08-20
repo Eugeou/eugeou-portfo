@@ -14,6 +14,7 @@ export interface FlipClockProps {
   unitBorderRadius?: string;
   unitMargin?: string;
   digitFontSize?: string;
+  fontFamily?: string;
 }
 
 export enum ENodeType {

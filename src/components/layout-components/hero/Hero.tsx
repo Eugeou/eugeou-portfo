@@ -29,6 +29,7 @@ const Hero = () => {
           colonDotSize="10px"
           colonHeight="116px"
           opacity={0.4}
+          fontFamily="'Press Start 2P', 'Courier New', monospace"
         />
       </div>
       <RightIntroHero />
