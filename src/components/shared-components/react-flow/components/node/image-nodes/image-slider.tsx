@@ -14,8 +14,8 @@ type Props = {
 };
 
 const cleanImageUrl = (url: string): string => {
-  if (!url) return '';
-  return url.trim().replace(/^["']|["']$/g, '');
+  if (!url) return "";
+  return url.trim().replace(/^["']|["']$/g, "");
 };
 
 export default function ImageSlider({
@@ -27,27 +27,39 @@ export default function ImageSlider({
   const containerRef = useRef<HTMLDivElement>(null);
   const cleanBeforeUrl = cleanImageUrl(imageUrls.before);
   const cleanAfterUrl = cleanImageUrl(imageUrls.after);
-  
+
+  console.log("ImageSlider props:", {
+    imageUrls,
+    cleanBeforeUrl,
+    cleanAfterUrl,
+    width,
+    height,
+  });
+
   return (
     <div
       ref={containerRef}
-      className={`relative w-[${width}px] h-[${height}px] overflow-hidden rounded-md border-[2px] border-white shadow-[1px_4px_6px_1px_rgba(0,0,0,0.1)] cursor-pointer`}
+      className="relative w-40 h-40 overflow-hidden rounded-md border-[2px] border-white shadow-[1px_4px_6px_1px_rgba(0,0,0,0.1)] cursor-pointer"
+      style={{
+        width: `${width}px`,
+        height: `${height}px`,
+      }}
     >
       <motion.div initial="expanded" whileHover="collapsed">
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(${cleanAfterUrl})`,
+            backgroundImage: cleanAfterUrl ? `url(${cleanAfterUrl})` : "none",
           }}
         />
         <motion.div
           variants={animSet.expand({
             width: (width * scaleXPercent) / 100,
-            duration: 2.2
+            duration: 2.2,
           })}
           className="absolute right-0 top-0 bottom-0 w-full h-full bg-cover bg-right bg-no-repeat"
           style={{
-            backgroundImage: `url(${cleanBeforeUrl})`,
+            backgroundImage: cleanBeforeUrl ? `url(${cleanBeforeUrl})` : "none",
           }}
         >
           <motion.div

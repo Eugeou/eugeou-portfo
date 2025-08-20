@@ -5,7 +5,7 @@ export const dataEdges: Edge[] = [
     {
       id: "edge-001",
       source: "about-me-root-node",
-      target: "about-me-root-node-2",
+      target: "about-me-education-parents-node",
       type: EEdgeType.ANIMATE,
       animated: true,
       style: {
@@ -15,8 +15,8 @@ export const dataEdges: Edge[] = [
     },
     {
       id: "edge-002",
-      source: "asset-type-node-001",
-      target: "prompting-node-001",
+      source: "about-me-education-parents-node",
+      target: "about-me-education-children-node",
       type: EEdgeType.ANIMATE,
       animated: false,
       style: {

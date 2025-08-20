@@ -1,15 +1,6 @@
+import { EducationType } from "@/types";
 
-interface DataNodeProps {
-  university?: string;
-  degree?: string;
-  field_of_study?: string;
-  start_date?: string;
-  end_date?: string;
-  description?: string;
-  number_of_years?: number;
-}
-
-export const DataNode = (data: DataNodeProps) => {
+export const EducationNode = ({data}: {data: EducationType}) => {
   // Filter out undefined values and create an array of [key, value] pairs
   const dataEntries = Object.entries(data).filter(
     ([_, value]) => value !== undefined

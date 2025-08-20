@@ -35,6 +35,9 @@ export default function CustomReactFlow() {
   const nodeTypes = useMemo(() => {
     return {
       [ENodeType.CARD_PARENTS]: ImageNode,
+      [ENodeType.CARD_ROOT]: ImageNode,
+      [ENodeType.CARD_DATA]: ImageNode,
+      [ENodeType.CARD_CHILDREN]: ImageNode,
     };
   }, []);
 
