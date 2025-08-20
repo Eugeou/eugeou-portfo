@@ -14,12 +14,11 @@ import { DisabledEdge } from "./components/edge/disabled-edge";
 import { SmoothstepEdge } from "./components/edge/smoothstep-edge";
 import { mockData } from "./data";
 import { Controls } from "./components/controls";
-import ImageNode from "./components/image-node";
+import ImageNode from "./components/node/image-nodes";
 import { usePopoverControls } from "@/hooks/use-popover-controls";
 import { useDnD } from "./provider/dnd-provider";
 
 export default function CustomReactFlow() {
-
   //const { getNodes } = useReactFlow();
   //const nodes = getNodes();
   const popoverControls = usePopoverControls();
@@ -55,10 +54,13 @@ export default function CustomReactFlow() {
     event.dataTransfer.dropEffect = "move";
   }, []);
 
-  const onViewportChange = useCallback((viewport: Viewport) => {
-    popoverControls.triggerAllPopoverControls();
-    console.log("viewport", viewport);
-  }, [popoverControls]);
+  const onViewportChange = useCallback(
+    (viewport: Viewport) => {
+      popoverControls.triggerAllPopoverControls();
+      console.log("viewport", viewport);
+    },
+    [popoverControls]
+  );
 
   return (
     <div className="w-full h-[100svh] flex-1 flex relative bg-[var(--p-color-bg-fill-surface-active)]">

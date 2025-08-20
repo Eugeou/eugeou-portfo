@@ -20,6 +20,7 @@ export enum ENodeType {
   CARD_PARENTS = "CARD::PARENTS",
   CARD_CHILDREN = "CARD::CHILDREN",
   CARD_ROOT = "CARD::ROOT",
+  CARD_DATA = "CARD::DATA",
 }
 
 export enum EEdgeType {
@@ -58,6 +59,42 @@ export enum ERatio {
   PORTRAIT_4_5 = "4_5",
 }
 
+export type EducationType = {
+  university?: string;
+  degree?: string;
+  field_of_study?: string;
+  start_date?: string;
+  end_date?: string;
+  description?: string;
+  number_of_years?: number;
+}
+
+export type UserData = {
+  name?: string;
+  age?: number;
+  email?: string;
+  phone?: string;
+  address?: string;
+  city?: string;
+  state?: string;
+  country?: string;
+  zip?: string;
+  gender?: string;
+  role?: string;
+  occupation?: string;
+  interests?: string;
+  hobbies?: string;
+  education?: EducationType;
+  skills?: string;
+  languages?: string;
+  affiliations?: string;
+  memberships?: string;
+  company?: string;
+  awards?: string;
+  publications?: string;
+  projects?: string;
+}
+
 export type NodeDataType = {
   image_id?: string;
   input_id?: string;
@@ -65,14 +102,6 @@ export type NodeDataType = {
   type?: ENodeType;
   value?: string;
   loading?: boolean;
-  intent_type?: {
-    name: string;
-  };
-  industry?: {
-    name?: string;
-  };
-  intent_type_name?: string;
-  industry_name?: string;
   origin_mask_url?: string;
   ratio?: ERatio;
   tags?: string;
@@ -81,6 +110,9 @@ export type NodeDataType = {
   updated_at?: string | null;
   disabled?: boolean;
   parent_node_id?: string;
+  size?: { width: number; height: number };
+  user_data?: UserData;
+  bookmark?: boolean;
 };
 
 export const CARD_IMAGE_OFFSET_X = 40;

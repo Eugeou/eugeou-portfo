@@ -28,6 +28,7 @@ export default function Home() {
           alt="banner"
           fill
           className="object-cover"
+          unoptimized
         />
       </div>
 
