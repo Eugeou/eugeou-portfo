@@ -1,0 +1,65 @@
+:root {
+  /* Color System */
+  --p-color-bg-surface: #ffffff;
+  --p-color-bg-surface-secondary-active: #f8f8f8;
+  --p-color-bg-surface-tertiary: #f5f5f5;
+  --p-color-bg-fill-tertiary: #f5f5f5;
+  --p-color-bg-fill-transparent-selected: rgba(255, 255, 255, 0.94);
+  --p-color-bg-fill-transparent-disabled: rgb(247, 247, 247);
+  
+  --p-color-border: #e0e0e0;
+  --p-color-border-magic-secondary: #969dc9;
+  --p-color-input-border-active: #969dc9;
+  
+  --p-color-text: #f8f8f8;
+  --p-color-text-secondary: #e8e8e8;
+  --p-color-text-disabled: #d0d0d0;
+
+  /* Spacing System */
+  --p-space-100: 4px;
+  --p-space-150: 6px;
+  --p-space-200: 8px;
+  --p-space-300: 12px;
+
+  /* Border Radius System */
+  --p-border-radius-150: 6px;
+  --p-border-radius-200: 8px;
+  --p-border-radius-300: 12px;
+  --p-border-radius-full: 50%;
+
+  /* Border Width System */
+  --p-border-width-050: 1px;
+  --p-border-width-0165: 0.66px;
+
+  /* Font Size System */
+  --p-font-size-300: 14px;
+  --p-font-size-325: 16px;
+
+  /* Font Weight System */
+  --p-font-weight-regular: 400;
+  --p-font-weight-medium: 500;
+
+  /* Width/Height System */
+  --p-width-900: 48px;
+  --p-height-900: 48px;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --p-color-bg-surface: #ffffff;
+    --p-color-bg-surface-secondary-active: #f9f7f7;
+    --p-color-bg-surface-tertiary: #a09e9e;
+    --p-color-bg-fill-tertiary: #3a3a3a;
+    --p-color-bg-fill-transparent-selected: rgba(255, 255, 255, 0.94);
+    --p-color-bg-fill-transparent-disabled: rgb(247, 247, 247);
+    
+    --p-color-border: #d9d9d9;
+    --p-color-border-magic-secondary: #ff8c00;
+    --p-color-input-border-active: #ff8c00;
+    
+    --p-color-text: #ffffff;
+    --p-color-text-secondary: #b0b0b0;
+    --p-color-text-disabled: #808080;
+  }
+} 

@@ -16,13 +16,14 @@ import { mockData } from "./data";
 import { Controls } from "./components/controls";
 import ImageNode from "./components/image-node";
 import { usePopoverControls } from "@/hooks/use-popover-controls";
+import { useDnD } from "./provider/dnd-provider";
 
-export default function CWStudioProjectMain() {
+export default function CustomReactFlow() {
 
   //const { getNodes } = useReactFlow();
   //const nodes = getNodes();
   const popoverControls = usePopoverControls();
-  //const [item, setItem] = useCWSDnD();
+  const [item, setItem] = useDnD();
 
   const edgeTypes = useMemo(() => {
     return {
@@ -34,7 +35,7 @@ export default function CWStudioProjectMain() {
 
   const nodeTypes = useMemo(() => {
     return {
-      [ENodeType.IMAGE_PRODUCT]: ImageNode,
+      [ENodeType.CARD_PARENTS]: ImageNode,
     };
   }, []);
 
@@ -43,16 +44,16 @@ export default function CWStudioProjectMain() {
   //   if (!item) return;
   //   handleChangeImage(item as ImageItemType);
   // };
-  // const onDragStart = (event: React.DragEvent<HTMLDivElement>) => {
-  //   if (!item) return;
-  //   setItem(item);
-  //   event.dataTransfer.setData("text/plain", item.data.url);
-  //   event.dataTransfer.effectAllowed = "move";
-  // };
-  // const onDragOver = useCallback((event: React.DragEvent<HTMLDivElement>) => {
-  //   event.preventDefault();
-  //   event.dataTransfer.dropEffect = "move";
-  // }, []);
+  const onDragStart = (event: React.DragEvent<HTMLDivElement>) => {
+    if (!item) return;
+    setItem(item);
+    event.dataTransfer.setData("text/plain", item.data.url);
+    event.dataTransfer.effectAllowed = "move";
+  };
+  const onDragOver = useCallback((event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    event.dataTransfer.dropEffect = "move";
+  }, []);
 
   const onViewportChange = useCallback((viewport: Viewport) => {
     popoverControls.triggerAllPopoverControls();
@@ -79,9 +80,9 @@ export default function CWStudioProjectMain() {
         minZoom={0.5}
         maxZoom={2.5}
         deleteKeyCode={[]}
-        // onDrop={onDrop}
-        // onDragStart={onDragStart}
-        // onDragOver={onDragOver}
+        //onDrop={onDrop}
+        onDragStart={onDragStart}
+        onDragOver={onDragOver}
         // onWheel={onWheel}
         onViewportChange={onViewportChange}
         draggable={true}

@@ -29,7 +29,7 @@ export const AnimateEdge = ({
         id={id}
         path={edgePath}
         style={{
-          stroke: "rgba(148, 116, 255, 0.2)",
+          stroke: "#f8e4c4",
           strokeWidth: 2,
         }}
       />

@@ -17,8 +17,9 @@ export interface FlipClockProps {
 }
 
 export enum ENodeType {
-  IMAGE_PRODUCT = "IMAGE::PRODUCT",
-  CARD_PROMPTING = "CARD::PROMPTING",
+  CARD_PARENTS = "CARD::PARENTS",
+  CARD_CHILDREN = "CARD::CHILDREN",
+  CARD_ROOT = "CARD::ROOT",
 }
 
 export enum EEdgeType {
@@ -61,7 +62,7 @@ export type NodeDataType = {
   image_id?: string;
   input_id?: string;
   title?: string;
-  type?: EMainTabId;
+  type?: ENodeType;
   value?: string;
   loading?: boolean;
   intent_type?: {
@@ -98,4 +99,20 @@ export const DEFAULT_HANDLE_STYLE = {
   border: "2px solid var(--p-color-border-magic-secondary)",
   background: "var(--p-color-input-bg-surface)",
   zIndex: 1,
+};
+
+export type ImageItemType = {
+  type: ENodeType;
+  data: {
+    id: string;
+    url: string;
+    alt?: string;
+    name?: string;
+    intent_type?: {
+      name: string;
+    };
+    industry?: {
+      name?: string;
+    };
+  };
 };

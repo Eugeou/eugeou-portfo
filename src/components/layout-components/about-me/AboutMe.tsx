@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { AboutMeContent } from "@/components/shared-components/about-me-content";
 import { ElectricTrain } from "@/components/shared-components/train/electric-train";
+import CustomReactFlow from "@/components/shared-components/react-flow";
+import { CatTrain } from "@/components/shared-components/train/cat-train";
 
 const AboutMe = () => {
   const about_ref = useRef<HTMLDivElement>(null);
@@ -21,12 +22,12 @@ const AboutMe = () => {
       className="flex flex-col overflow-hidden items-center h-screen bg-gradient-to-r from-[#f5f5f9] to-[#e1e2f7]"
     >
       <div className="flex flex-col items-center justify-center w-screen">
-        <ElectricTrain />
-        {/* <CatTrain /> */}
+        {/* <ElectricTrain /> */}
+        <CatTrain />
       </div>
-      
+      <CustomReactFlow />
       {/* <ScrollingText /> */}
-      <AboutMeContent />
+      {/* <AboutMeContent /> */}
     </motion.div>
   );
 };

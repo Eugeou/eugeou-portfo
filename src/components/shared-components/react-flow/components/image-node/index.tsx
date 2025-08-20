@@ -1,23 +1,13 @@
-import {
-  Banner,
-  BlockStack,
-  Box,
-  Button,
-  Icon,
-  InlineStack,
-  LegacyCard,
-  Text,
-  Tooltip,
-} from "@shopify/polaris";
-import { ProductIcon, ThemeIcon } from "@shopify/polaris-icons";
 import { Handle, NodeProps, Position } from "@xyflow/react";
-import { DEFAULT_HANDLE_STYLE, NodeDataType } from "@/types";
+import { DEFAULT_HANDLE_STYLE, ENodeType, ImageItemType, NodeDataType } from "@/types";
 import { useState } from "react";
 import ButtonIcon from "../button-icon";
 import styles from "./image-node.module.css";
-import { mockEdges } from "../../data";
-import { EMainTabId } from "@/types";
+import { dataEdges } from "../../data";
 import Image from "next/image";
+import { Tooltip, Button } from "@/components/shared-components/elements";
+import { ImageError } from "./image-error";
+import { ImageEmpty } from "./image-empty";
 type Props = NodeProps & {
   data: NodeDataType;
 };
@@ -27,84 +17,35 @@ export default function ImageNode({
   data,
   isConnectable,
   selected,
-}: //positionAbsoluteY,
-//positionAbsoluteX,
-Props) {
-  const hasRightEdge = mockEdges.some((edge) => edge.source === id);
-  const hasLeftEdge = mockEdges.some((edge) => edge.target === id);
-
+}: Props) {
+  const hasRightEdge = dataEdges.some((edge) => edge.source === id);
+  const hasLeftEdge = dataEdges.some((edge) => edge.target === id);
   const [error, setError] = useState(false);
 
   const handleClick = () => {};
 
   const renderImageContent = () => {
     if (data.is_error || error)
-      return (
-        <div className={styles.ImageNodeError}>
-          <BlockStack gap="200" align="center" inlineAlign="center">
-            <div>
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M15.9998 9.5998C16.6626 9.59982 17.1998 10.1371 17.1998 10.7998L17.1997 16.3998C17.1997 17.0626 16.6624 17.5998 15.9997 17.5998C15.337 17.5998 14.7997 17.0625 14.7997 16.3998L14.7998 10.7998C14.7998 10.137 15.3371 9.59979 15.9998 9.5998Z"
-                  fill="#EF4D2F"
-                />
-                <path
-                  d="M17.5998 20.7998C17.5998 21.6835 16.8835 22.3998 15.9998 22.3998C15.1161 22.3998 14.3998 21.6835 14.3998 20.7998C14.3998 19.9162 15.1161 19.1998 15.9998 19.1998C16.8835 19.1998 17.5998 19.9162 17.5998 20.7998Z"
-                  fill="#EF4D2F"
-                />
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M27.1998 15.9998C27.1998 22.1854 22.1854 27.1998 15.9998 27.1998C9.81422 27.1998 4.7998 22.1854 4.7998 15.9998C4.7998 9.81422 9.81422 4.7998 15.9998 4.7998C22.1854 4.7998 27.1998 9.81422 27.1998 15.9998ZM24.7998 15.9998C24.7998 20.8599 20.8599 24.7998 15.9998 24.7998C11.1397 24.7998 7.1998 20.8599 7.1998 15.9998C7.1998 11.1397 11.1397 7.1998 15.9998 7.1998C20.8599 7.1998 24.7998 11.1397 24.7998 15.9998Z"
-                  fill="#EF4D2F"
-                />
-              </svg>
-            </div>
-            <Text as="span" variant="bodyMd">
-              {error ? "No image available" : "Ad image generation failed"}
-            </Text>
-          </BlockStack>
-        </div>
-      );
+      return <ImageError error={error} />        
     if (data.value)
       return (
-        <button className={styles.ImageNodeImgContainer}>
+        <div className={styles.ImageNodeImgContainer}>
           <Image
-            src={data.value}
+            src={data.value.startsWith('/') ? data.value : `/${data.value}`}
             alt="Dropped image"
+            width={240}
+            height={240}
             className={styles.ImageNodeImg}
             onError={() => setError(true)}
           />
-        </button>
+        </div>
       );
-    return (
-      <div className={styles.ImageNodeEmptyContainer}>
-        <div className={styles.ImageNodeEmptyIcon}>
-          <Icon
-            source={data.type === EMainTabId.Products ? ProductIcon : ThemeIcon}
-          />
-        </div>
-        <div className={styles.ImageNodeEmptyText}>
-          {data.type === EMainTabId.Products
-            ? "Add your product image"
-            : "Add your asset type"}
-        </div>
-      </div>
-    );
+    return <ImageEmpty data={data as unknown as ImageItemType} />
   };
-
-  console.log("hasLeftEdge", hasLeftEdge);
-  console.log("hasRightEdge", hasRightEdge);
 
   return (
     <div
-      className={`nopan h-[240px] w-[240px]  ${styles.ImageNodeContainer} ${
+      className={`nopan h-[160px] w-[160px]  ${styles.ImageNodeContainer} ${
         data.value || data.loading || data.is_error
           ? styles.ImageNodeLoading
           : ""
@@ -134,22 +75,40 @@ Props) {
           opacity: !hasRightEdge ? 0 : 1,
         }}
       />
-      {data.value && data.type === EMainTabId.AdResult && (
+      {data.value && data.type === ENodeType.CARD_PARENTS && (
         <div
-          className={`${styles.ImageNodeActions} ${styles.ImageNodeActionsActive}`}
+          className={styles.ImageNodeActions}
         >
-          <Box
-            padding="050"
-            borderRadius="200"
-            shadow="button"
-            background="bg-surface"
-          >
-            <InlineStack gap="050">
-              <Tooltip content="View full screen" activatorWrapper="div">
+          <div className="rounded-lg shadow-md bg-white">
+            <div className="flex gap-2">
+              <Tooltip content="View full screen">
                 <div className={styles.ImageNodeActionsButton}>
-                  <Button
-                    variant="tertiary"
-                    icon={
+                  <Button variant="tertiary">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.0551 2.77783C12.5949 2.77783 12.2218 3.15093 12.2218 3.61117C12.2218 4.0714 12.5949 4.4445 13.0551 4.4445L14.3766 4.4445L10.7992 8.02191C10.4738 8.34735 10.4738 8.87498 10.7992 9.20042C11.1246 9.52586 11.6523 9.52586 11.9777 9.20042L15.5551 5.62301L15.5551 6.9445C15.5551 7.40474 15.9282 7.77783 16.3885 7.77783C16.8487 7.77783 17.2218 7.40474 17.2218 6.9445L17.2218 3.61117C17.2218 3.15093 16.8487 2.77783 16.3885 2.77783H13.0551Z"
+                        fill="currentColor"
+                      />
+                      <path
+                        d="M6.94401 17.2223C7.40425 17.2223 7.77734 16.8492 7.77734 16.3889C7.77734 15.9287 7.40425 15.5556 6.94401 15.5556H5.62252L9.19993 11.9782C9.52537 11.6528 9.52537 11.1251 9.19993 10.7997C8.8745 10.4743 8.34686 10.4743 8.02142 10.7997L4.44401 14.3771V13.0556C4.44401 12.5954 4.07091 12.2223 3.61068 12.2223C3.15044 12.2223 2.77734 12.5954 2.77734 13.0556V16.3889C2.77734 16.8492 3.15044 17.2223 3.61068 17.2223H6.94401Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </Button>
+                </div>
+              </Tooltip>
+              <Tooltip
+                content={data.bookmark ? "Unsave" : "Save"}
+              >
+                <div className={styles.ImageNodeActionsButton}>
+                  <Button variant="tertiary">
+                    {data.bookmark ? (
                       <svg
                         width="20"
                         height="20"
@@ -158,59 +117,29 @@ Props) {
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M13.0551 2.77783C12.5949 2.77783 12.2218 3.15093 12.2218 3.61117C12.2218 4.0714 12.5949 4.4445 13.0551 4.4445L14.3766 4.4445L10.7992 8.02191C10.4738 8.34735 10.4738 8.87498 10.7992 9.20042C11.1246 9.52586 11.6523 9.52586 11.9777 9.20042L15.5551 5.62301L15.5551 6.9445C15.5551 7.40474 15.9282 7.77783 16.3885 7.77783C16.8487 7.77783 17.2218 7.40474 17.2218 6.9445L17.2218 3.61117C17.2218 3.15093 16.8487 2.77783 16.3885 2.77783H13.0551Z"
-                          fill="currentColor"
+                          d="M15.6367 16.0059L15.624 16.168C15.51 16.9027 14.633 17.2581 14.04 16.8096L13.918 16.7012L10.7168 13.3926C10.3238 12.9865 9.6723 12.9865 9.2793 13.3926L6.07812 16.7012L5.95605 16.8096C5.36311 17.2581 4.48608 16.9027 4.37207 16.168L4.35938 16.0059V3.26562C4.35938 2.74795 4.75271 2.32184 5.25684 2.27051L5.35938 2.26562H14.6367L14.7393 2.27051C15.2434 2.32184 15.6367 2.74795 15.6367 3.26562V16.0059Z"
+                          fill="#8051FF"
                         />
+                      </svg>
+                    ) : (
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
                         <path
-                          d="M6.94401 17.2223C7.40425 17.2223 7.77734 16.8492 7.77734 16.3889C7.77734 15.9287 7.40425 15.5556 6.94401 15.5556H5.62252L9.19993 11.9782C9.52537 11.6528 9.52537 11.1251 9.19993 10.7997C8.8745 10.4743 8.34686 10.4743 8.02142 10.7997L4.44401 14.3771V13.0556C4.44401 12.5954 4.07091 12.2223 3.61068 12.2223C3.15044 12.2223 2.77734 12.5954 2.77734 13.0556V16.3889C2.77734 16.8492 3.15044 17.2223 3.61068 17.2223H6.94401Z"
+                          d="M5.85938 14.7686L8.20117 12.3496L8.39258 12.1709C9.31855 11.3933 10.6775 11.3933 11.6035 12.1709L11.7949 12.3496L14.1367 14.7686V3.76562H5.85938V14.7686ZM15.6367 16.0059L15.624 16.168C15.51 16.9027 14.633 17.2581 14.04 16.8096L13.918 16.7012L10.7168 13.3926C10.3238 12.9865 9.6723 12.9865 9.2793 13.3926L6.07812 16.7012L5.95605 16.8096C5.36311 17.2581 4.48608 16.9027 4.37207 16.168L4.35938 16.0059V3.26562C4.35938 2.74795 4.75271 2.32184 5.25684 2.27051L5.35938 2.26562H14.6367L14.7393 2.27051C15.2434 2.32184 15.6367 2.74795 15.6367 3.26562V16.0059Z"
                           fill="currentColor"
                         />
                       </svg>
-                    }
-                  ></Button>
+                    )}
+                  </Button>
                 </div>
               </Tooltip>
-              <Tooltip
-                content={data.bookmark ? "Unsave" : "Save"}
-                activatorWrapper="div"
-              >
-                <div className={styles.ImageNodeActionsButton}>
-                  <Button
-                    variant="tertiary"
-                    icon={
-                      data.bookmark ? (
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M15.6367 16.0059L15.624 16.168C15.51 16.9027 14.633 17.2581 14.04 16.8096L13.918 16.7012L10.7168 13.3926C10.3238 12.9865 9.6723 12.9865 9.2793 13.3926L6.07812 16.7012L5.95605 16.8096C5.36311 17.2581 4.48608 16.9027 4.37207 16.168L4.35938 16.0059V3.26562C4.35938 2.74795 4.75271 2.32184 5.25684 2.27051L5.35938 2.26562H14.6367L14.7393 2.27051C15.2434 2.32184 15.6367 2.74795 15.6367 3.26562V16.0059Z"
-                            fill="#8051FF"
-                          />
-                        </svg>
-                      ) : (
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M5.85938 14.7686L8.20117 12.3496L8.39258 12.1709C9.31855 11.3933 10.6775 11.3933 11.6035 12.1709L11.7949 12.3496L14.1367 14.7686V3.76562H5.85938V14.7686ZM15.6367 16.0059L15.624 16.168C15.51 16.9027 14.633 17.2581 14.04 16.8096L13.918 16.7012L10.7168 13.3926C10.3238 12.9865 9.6723 12.9865 9.2793 13.3926L6.07812 16.7012L5.95605 16.8096C5.36311 17.2581 4.48608 16.9027 4.37207 16.168L4.35938 16.0059V3.26562C4.35938 2.74795 4.75271 2.32184 5.25684 2.27051L5.35938 2.26562H14.6367L14.7393 2.27051C15.2434 2.32184 15.6367 2.74795 15.6367 3.26562V16.0059Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      )
-                    }
-                  ></Button>
-                </div>
-              </Tooltip>
-            </InlineStack>
-          </Box>
+            </div>
+          </div>
         </div>
       )}
       {data.title && (
@@ -223,17 +152,17 @@ Props) {
             <span className={styles.ImageNodeTitle}>{data.title}</span>
           )}
 
-          {data.type !== EMainTabId.AdResult && (
+          {/* {data.type !== ENodeType.CARD_ROOT && ( */}
             <Tooltip
               content={
-                data.type === EMainTabId.Products
-                  ? "Image locked after generation"
+                data.type === ENodeType.CARD_PARENTS
+                  ? "Image locked"
                   : "Change image"
               }
-              width="wide"
+              width="default"
             >
               <ButtonIcon>
-                {data.type === EMainTabId.Products ? (
+                {data.type === ENodeType.CARD_PARENTS ? (
                   <svg
                     width="18"
                     height="19"
@@ -255,8 +184,8 @@ Props) {
                 ) : (
                   <svg
                     width="16"
-                    height="12"
-                    viewBox="0 0 16 12"
+                    height="16"
+                    viewBox="0 0 16 16"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -268,20 +197,11 @@ Props) {
                 )}
               </ButtonIcon>
             </Tooltip>
-          )}
+          {/* )} */}
         </div>
       )}
       <div className={styles.ImageNodeContent}>
         {renderImageContent()}
-        {data.type === EMainTabId.Products && (
-          <div className={styles.ImageNodeWarningBanner}>
-            <LegacyCard>
-              <Banner tone="warning">
-                <p>Use 1:1 image to avoid cropping in final result</p>
-              </Banner>
-            </LegacyCard>
-          </div>
-        )}
       </div>
     </div>
   );

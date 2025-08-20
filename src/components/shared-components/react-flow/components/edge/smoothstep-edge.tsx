@@ -29,7 +29,7 @@ export const SmoothstepEdge = ({
       path={edgePath}
       style={{
         // stroke: "var(--p-color-border-magic-secondary)",
-        stroke: "#b19bfc",
+        stroke: "#ff8c00",
         strokeWidth: 2,
       }}
     />
