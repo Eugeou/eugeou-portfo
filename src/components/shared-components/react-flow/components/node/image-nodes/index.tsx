@@ -10,7 +10,6 @@ import styles from "./image-node.module.css";
 import { dataEdges } from "../../../data/edge";
 import { ImageEmpty } from "./image-empty";
 import Image from "next/image";
-import { ToolBar } from "./toolbar";
 import { LockIcon } from "./lock-icon";
 import { EducationNode } from "../data-nodes/education-node";
 import { useState } from "react";

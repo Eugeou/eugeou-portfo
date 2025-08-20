@@ -6,7 +6,7 @@ interface Props {
 
 export function EducationNode({ data }: Props) {
   const dataEntries = Object.entries(data).filter(
-    ([_, value]) => value !== undefined
+    ([, value]) => value !== undefined
   );
 
   return (
@@ -44,7 +44,7 @@ export function EducationNode({ data }: Props) {
 
       {/* Data Fields */}
       <div className="space-y-3">
-        {dataEntries.map(([key, value], index) => {
+        {dataEntries.map(([key, value]) => {
           const isDate = key.includes("date");
           const isDescription = key === "description";
           const isYears = key === "number_of_years";
