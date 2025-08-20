@@ -8,11 +8,11 @@ import type { Edge, Node } from "@xyflow/react";
 
 export const aboutMeRootNode: Node<NodeDataType> = {
   id: "about-me-root-node",
-  type: ENodeType.CARD_ROOT,
+  type: ENodeType.CARD_PARENTS,
   position: { x: 100, y: 100 },
   data: {
     title: "Product image",
-    type: ENodeType.CARD_PARENTS,
+    type: ENodeType.CARD_ROOT,
     value: "assets/antd.png",
     image_id: "",
     ratio: ERatio.SQUARE,

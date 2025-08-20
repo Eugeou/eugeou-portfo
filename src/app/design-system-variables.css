@@ -1,7 +1,7 @@
 :root {
   /* Color System */
-  --p-color-bg-surface: #ffffff;
-  --p-color-bg-surface-secondary-active: #f8f8f8;
+  --p-color-bg-surface: #cfd7d8;
+  --p-color-bg-surface-secondary-active: #656464;
   --p-color-bg-surface-tertiary: #f5f5f5;
   --p-color-bg-fill-tertiary: #f5f5f5;
   --p-color-bg-fill-transparent-selected: rgba(255, 255, 255, 0.94);
@@ -11,9 +11,9 @@
   --p-color-border-magic-secondary: #969dc9;
   --p-color-input-border-active: #969dc9;
   
-  --p-color-text: #f8f8f8;
-  --p-color-text-secondary: #e8e8e8;
-  --p-color-text-disabled: #d0d0d0;
+  --p-color-text: #797777;
+  --p-color-text-secondary: #5f5e5e;
+  --p-color-text-disabled: #575757;
 
   /* Spacing System */
   --p-space-100: 4px;
@@ -58,7 +58,7 @@
     --p-color-border-magic-secondary: #ff8c00;
     --p-color-input-border-active: #ff8c00;
     
-    --p-color-text: #ffffff;
+    --p-color-text: #9c9c9c;
     --p-color-text-secondary: #b0b0b0;
     --p-color-text-disabled: #808080;
   }

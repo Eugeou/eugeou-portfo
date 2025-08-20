@@ -204,7 +204,7 @@ const Footer = () => {
               className="bg-white rounded-full"
               onClick={() =>
                 window.open(
-                  "https://www.linkedin.com/in/qu%C3%A2n-nguy%E1%BB%85n-ho%C3%A0ng-minh-3851aa2a0/",
+                  "https://www.linkedin.com/in/nguy%E1%BB%85n-ho%C3%A0ng-minh-qu%C3%A2n-eugeous/",
                   "_blank"
                 )
               }

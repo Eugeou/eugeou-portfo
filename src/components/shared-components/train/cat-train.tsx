@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export const CatTrain = () => {
   return (
-    <div className="flex flex-col w-full items-start justify-center relative mt-10">
-            <Image
+    <div className="flex flex-col w-full items-start justify-center relative mt-6 overflow-hidden">
+      <Image
         src="/assets/gifs/cherry-blossom.gif"
         alt="sakura"
         width={200}

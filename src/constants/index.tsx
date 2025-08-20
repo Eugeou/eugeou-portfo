@@ -56,7 +56,7 @@ export const menuItems = [
   { id: "MySkills", label: "My Skills", icon: BatteryPixelIcon },
   { id: "Experience", label: "Experience", icon: MyExpIPixelIcon },
   { id: "Projects", label: "Projects", icon: MyProjectPixelIcon },
-  { id: "ContactMe", label: "Contact me", icon: ContactPixelIcon },
+  { id: "Footer", label: "Contact me", icon: ContactPixelIcon },
 ];
 
 export const aboutMeTabs = [

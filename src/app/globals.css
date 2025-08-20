@@ -25,7 +25,8 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-  
+
+  /* Scrollbar */
   .scrollbar-thin-custom {
     scrollbar-width: thin;
     scrollbar-color: #d1d5db transparent;
@@ -44,6 +45,16 @@ body {
     border-radius: 9999px;
   }
 
+    /* No scrollbar */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+  
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
   /* Shimmer animation for loading skeletons */
   .animate-shimmer {
     animation: shimmer 2s infinite linear;
@@ -58,14 +69,82 @@ body {
       background-position: 0% 0;
     }
   }
-
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
+  
+  /* Text animation */
+  .text-animation {
+    /*   animate-gradient */
+    background: linear-gradient(
+      to right,
+      #616161 43%,
+      #d1d1d1 49%,
+      #616161 56%
+    );
+    background-size: 200% 200%;
+    background-position: 100% 50%;
+    animation: gradient 2s infinite linear;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  .animation-width {
+    animation: width 8s infinite ease-in-out;
+  }
+
+  /* Width animation keyframes */
+  @keyframes width{
+    0% {
+      width: 0;
+    }
+    75% {
+      width: 100%;
+    }
+    100% {
+      width: 0;
+    }
+  }
+  .animation-transform {
+    animation: transform 6s infinite ease-in-out;
+  }
+  @keyframes transform {
+    0%{
+      transform: translateY(0) translateX(0)
+    }
+    50%{
+      transform: translateY(40px) translateX(-10px)
+    }
+    100%{
+      transform: translateY(0) translateX(0);
+    }
+  }
+  .animation-transform2{
+    animation: transform2 4s infinite ease-in-out;
+  }
+
+  @keyframes transform2 {
+    0%{
+      transform: translateY(0) translateX(0)
+    }
+    50%{
+      transform: translateY(-40px) translateX(-10px)
+    }
+    100%{
+      transform: translateY(0) translateX(0);
+    }
+  }
+
+  /* Gradient animation */
+  @keyframes gradient {
+    0% {
+      background-position: 100% 50%;
+    }
+    50% {
+      background-position: 50% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 }
 

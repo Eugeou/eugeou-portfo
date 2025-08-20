@@ -20,11 +20,11 @@ export const Tooltip = ({
       {children}
       {isVisible && (
         <div className={`
-          absolute z-50 px-3 py-2 text-sm text-white bg-gray-900 rounded-lg shadow-lg
-          ${width === "wide" ? "w-40" : "w-auto max-w-xs"}
+          absolute z-50 px-2 py-2 text-[12px] text-center text-gray-500 bg-white border border-gray-200 rounded-lg shadow-lg
+          ${width === "wide" ? "w-40" : "w-20 max-w-xs"}
           -top-2 left-1/2 transform -translate-x-1/2 -translate-y-full
           after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2
-          after:border-4 after:border-transparent after:border-t-gray-900
+          after:border-4 after:border-transparent after:border-t-gray-500
         `}>
           {content}
         </div>

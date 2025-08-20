@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ElectricTrain } from "@/components/shared-components/train/electric-train";
 import CustomReactFlow from "@/components/shared-components/react-flow";
 import { CatTrain } from "@/components/shared-components/train/cat-train";
 

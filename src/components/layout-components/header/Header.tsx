@@ -5,6 +5,7 @@ import FlipClock from "../../shared-components/flip-clock/flip-clock";
 import { useCheckMobile } from "@/hooks/use-check-mobile";
 import { menuItems, sections } from "@/constants";
 import { MenuIcon } from "../../shared-components/pixel-icons";
+import { Tooltip } from "@/components/shared-components/elements";
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState<string>("Home");
@@ -134,10 +135,11 @@ const Header = () => {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed left-5 top-80 h-[32%] w-12 bg-white shadow-lg bg-opacity-50 rounded-xl z-40 pt-5"
+              className="fixed left-5 top-80 h-[34%] w-12 bg-white shadow-lg bg-opacity-50 rounded-xl z-40 pt-5"
             >
               <div className="flex flex-col p-1 space-y-1">
                 {menuItems.map((item) => (
+                  <Tooltip key={item.id} content={item.label}>
                   <motion.button
                     key={item.id}
                     onClick={() => handleMenuItemClick(item.id)}
@@ -150,7 +152,7 @@ const Header = () => {
                     whileTap={{ scale: 0.98 }}
                   >
                     {item.icon && <item.icon size={14} />}
-                  </motion.button>
+                  </motion.button></Tooltip>
                 ))}
               </div>
             </motion.div>
