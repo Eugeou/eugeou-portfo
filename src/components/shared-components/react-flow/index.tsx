@@ -66,7 +66,10 @@ export default function CustomReactFlow() {
   );
 
   return (
-    <div className="w-full h-[100svh] flex-1 flex relative bg-[var(--p-color-bg-fill-surface-active)]">
+    <div
+      className="w-full h-screen min-h-[800px] flex-1 flex relative bg-[var(--p-color-bg-fill-surface-active)]"
+      //style={{ height: "max(800px, 100vh)" }}
+    >
       <ReactFlow
         nodes={mockData.nodes}
         edges={mockData.edges}
@@ -95,7 +98,7 @@ export default function CustomReactFlow() {
         <Background variant={BackgroundVariant.Dots} />
 
         <Panel
-          position="bottom-left"
+          position="top-left"
           style={{
             margin: 0,
             width: "100%",

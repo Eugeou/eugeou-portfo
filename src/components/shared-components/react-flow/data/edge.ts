@@ -7,7 +7,7 @@ export const dataEdges: Edge[] = [
       source: "about-me-root-node",
       target: "about-me-education-parents-node",
       type: EEdgeType.ANIMATE,
-      animated: true,
+      animated: false,
       style: {
         stroke: "#ccc ",
         strokeWidth: 2,
@@ -18,7 +18,7 @@ export const dataEdges: Edge[] = [
       source: "about-me-education-parents-node",
       target: "about-me-education-children-node",
       type: EEdgeType.ANIMATE,
-      animated: false,
+      animated: true,
       style: {
         stroke: "#ff8c00",
         strokeWidth: 2,

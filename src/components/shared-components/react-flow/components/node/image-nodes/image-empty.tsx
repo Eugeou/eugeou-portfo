@@ -60,7 +60,9 @@ export const ImageEmpty = ({ data }: { data: ImageItemType }) => {
           </svg>
         )}
       </div>
-      <div className={styles.ImageNodeEmptyText}>&ldquo;Add your image&rdquo;</div>
+      <div className={styles.ImageNodeEmptyText}>
+        &ldquo;Add your image&rdquo;
+      </div>
     </div>
   );
 };

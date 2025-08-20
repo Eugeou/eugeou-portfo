@@ -4,7 +4,7 @@ import type { Node } from "@xyflow/react";
 export const aboutMeEducationParentsNode: Node<NodeDataType> = {
   id: "about-me-education-parents-node",
   type: ENodeType.CARD_PARENTS,
-  position: { x: 400, y: 0 },
+  position: { x: 400, y: 200 },
   data: {
     title: "Education",
     type: ENodeType.CARD_PARENTS,
@@ -23,11 +23,11 @@ export const aboutMeEducationParentsNode: Node<NodeDataType> = {
 export const aboutMeEducationChildrenNode: Node<NodeDataType> = {
   id: "about-me-education-children-node",
   type: ENodeType.CARD_PARENTS,
-  position: { x: 660, y: 0 },
+  position: { x: 720, y: -100 },
   data: {
-    title: "Education",
+    title: "My Education",
     type: ENodeType.CARD_DATA,
-    size: { width: 200, height: 600 },
+    size: { width: 150, height: 600 },
     user_data: {
       education: {
         university: "The University of Information Technology",

@@ -18,6 +18,7 @@ const cleanImageUrl = (url: string): string => {
   return url.trim().replace(/^["']|["']$/g, "");
 };
 
+
 export default function ImageSlider({
   imageUrls,
   width = 160,
@@ -27,14 +28,6 @@ export default function ImageSlider({
   const containerRef = useRef<HTMLDivElement>(null);
   const cleanBeforeUrl = cleanImageUrl(imageUrls.before);
   const cleanAfterUrl = cleanImageUrl(imageUrls.after);
-
-  console.log("ImageSlider props:", {
-    imageUrls,
-    cleanBeforeUrl,
-    cleanAfterUrl,
-    width,
-    height,
-  });
 
   return (
     <div

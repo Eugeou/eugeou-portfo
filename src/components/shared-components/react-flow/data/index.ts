@@ -9,7 +9,7 @@ import {
 export const aboutMeRootNode: Node<NodeDataType> = {
   id: "about-me-root-node",
   type: ENodeType.CARD_PARENTS,
-  position: { x: 100, y: 100 },
+  position: { x: 100, y: 300 },
   data: {
     title: "Eugeous",
     type: ENodeType.CARD_ROOT,
@@ -29,7 +29,7 @@ export const aboutMeRootNode: Node<NodeDataType> = {
 export const aboutMeRootNode2: Node<NodeDataType> = {
   id: "about-me-root-node-2",
   type: ENodeType.CARD_PARENTS,
-  position: { x: 400, y: 0 },
+  position: { x: 400, y: 100 },
   data: {
     title: "Firegroup Technology",
     type: ENodeType.CARD_PARENTS,
