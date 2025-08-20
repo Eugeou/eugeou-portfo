@@ -10,6 +10,7 @@ export const ElectricTrain = () => {
         width={200}
         height={200}
         className="absolute -top-[132px] "
+        unoptimized
       />
       <Image
         src="/assets/gifs/sakura.gif"
@@ -17,6 +18,7 @@ export const ElectricTrain = () => {
         width={200}
         height={200}
         className="absolute -top-[120px] left-60"
+        unoptimized
       />
       <Image
         src="/assets/gifs/sakura.gif"
@@ -24,6 +26,7 @@ export const ElectricTrain = () => {
         width={200}
         height={200}
         className="absolute -top-[120px] left-80"
+        unoptimized
       />
       <Image
         src="/assets/gifs/sakura.gif"
@@ -31,6 +34,7 @@ export const ElectricTrain = () => {
         width={200}
         height={200}
         className="absolute -top-[120px] left-[400px]"
+        unoptimized
       />
       <Image
         src="/assets/gifs/sakura.gif"
@@ -38,6 +42,7 @@ export const ElectricTrain = () => {
         width={200}
         height={200}
         className="absolute -top-[120px] left-[800px]"
+        unoptimized
       />
       <Image
         src="/assets/gifs/sakura.gif"
@@ -45,6 +50,7 @@ export const ElectricTrain = () => {
         width={200}
         height={200}
         className="absolute -top-[120px] left-[880px]"
+        unoptimized
       />
       <Image
         src="/assets/gifs/sakura.gif"
@@ -52,6 +58,7 @@ export const ElectricTrain = () => {
         width={200}
         height={200}
         className="absolute -top-[120px] left-[960px]"
+        unoptimized
       />
       <motion.div
         className="flex relative w-full before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-10 before:content-[''] after:absolute after:right-0 after:top-0 after:h-full after:w-10 after:content-['']"

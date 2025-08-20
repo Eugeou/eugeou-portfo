@@ -43,6 +43,7 @@ export const RightIntroHero = () => {
             width={isMobile ? 250 : 500}
             height={isMobile ? 300 : 700}
             className="z-10 rounded-xl h-[300px] w-[260px] md:h-[368px] md:w-[500px] mt-5 md:mt-2 relative"
+            unoptimized
           />
           <Image
             src="/assets/railways/barrier.png"

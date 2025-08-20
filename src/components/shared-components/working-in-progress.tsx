@@ -1,5 +1,5 @@
 import { Modal } from "antd";
-import TwinkleStar from "./react-flow/components/image-node/twinkle-star";
+import TwinkleStar from "./react-flow/components/node/image-nodes/twinkle-star";
 
 type Props = {
   open: boolean;
@@ -36,16 +36,17 @@ export const WIPModal = ({ open, onClose }: Props) => {
           </div>
 
           <h1 className="text-lg md:text-xl font-bold text-gray-800 mb-3">
-            🚧 My Portfolio Under Construction 🚧
+            🚧 My Portfo Under Construction 🚧
           </h1>
 
           <p className="text-gray-600 mb-3 max-w-md text-sm md:text-base">
-            I&apos;m currently rebuilding my portfolio with the latest technologies
-            and a fresh design to better showcase my work and skills.
+            I&apos;m currently rebuilding my portfolio with the latest
+            technologies and a fresh design to better showcase my work and
+            skills.
           </p>
 
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-5 w-[100%] max-w-md text-sm md:text-base">
-            <p className="text-sm text-blue-800">
+            <div className="text-sm text-blue-800">
               <strong>What&apos;s coming:</strong>
               <ol className="list-disc list-inside">
                 <li>Some Modern and exciting UI/UX</li>
@@ -55,7 +56,7 @@ export const WIPModal = ({ open, onClose }: Props) => {
                 <li>Enhanced user experience</li>
                 <li>And more...</li>
               </ol>
-            </p>
+            </div>
           </div>
 
           <p className="text-gray-500 text-sm text-center">
