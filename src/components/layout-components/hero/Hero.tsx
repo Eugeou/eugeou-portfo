@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import FlipClock from "../../shared-components/flip-clock/flip-clock";
+import FlipClock from "../../shared-components/flip-clock";
 import { useCheckMobile } from "@/hooks/use-check-mobile";
 import { RightIntroHero } from "@/components/shared-components/right-intro-hero";
 

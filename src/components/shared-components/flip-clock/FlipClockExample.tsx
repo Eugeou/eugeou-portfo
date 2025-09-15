@@ -1,4 +1,4 @@
-import FlipClock from "./flip-clock";
+import FlipClock from ".";
 
 const FlipClockExample = () => {
   return (
@@ -72,6 +72,81 @@ const FlipClockExample = () => {
         unitWidth="40px"
         unitHeight="44px"
         digitFontSize="1em"
+      />
+
+      <h2>Blue Theme Flip Clock</h2>
+      <FlipClock
+        width="250px"
+        height="70px"
+        backgroundColor="#e3f2fd"
+        cardBackgroundColor="#1976d2"
+        digitColor="#ffffff"
+        colonColor="#1976d2"
+        borderColor="#1565c0"
+        shadowColor="rgba(25, 118, 210, 0.3)"
+        unitWidth="50px"
+        unitHeight="55px"
+        digitFontSize="1.3em"
+      />
+
+      <h2>Green Theme Flip Clock</h2>
+      <FlipClock
+        width="250px"
+        height="70px"
+        backgroundColor="#e8f5e8"
+        cardBackgroundColor="#2e7d32"
+        digitColor="#ffffff"
+        colonColor="#2e7d32"
+        borderColor="#1b5e20"
+        shadowColor="rgba(46, 125, 50, 0.3)"
+        unitWidth="50px"
+        unitHeight="55px"
+        digitFontSize="1.3em"
+      />
+
+      <h2>Purple Theme Flip Clock</h2>
+      <FlipClock
+        width="250px"
+        height="70px"
+        backgroundColor="#f3e5f5"
+        cardBackgroundColor="#7b1fa2"
+        digitColor="#ffffff"
+        colonColor="#7b1fa2"
+        borderColor="#4a148c"
+        shadowColor="rgba(123, 31, 162, 0.3)"
+        unitWidth="50px"
+        unitHeight="55px"
+        digitFontSize="1.3em"
+      />
+
+      <h2>Orange Theme Flip Clock</h2>
+      <FlipClock
+        width="250px"
+        height="70px"
+        backgroundColor="#fff3e0"
+        cardBackgroundColor="#f57c00"
+        digitColor="#ffffff"
+        colonColor="#f57c00"
+        borderColor="#e65100"
+        shadowColor="rgba(245, 124, 0, 0.3)"
+        unitWidth="50px"
+        unitHeight="55px"
+        digitFontSize="1.3em"
+      />
+
+      <h2>Dark Theme Flip Clock</h2>
+      <FlipClock
+        width="250px"
+        height="70px"
+        backgroundColor="#424242"
+        cardBackgroundColor="#000000"
+        digitColor="#00ff00"
+        colonColor="#00ff00"
+        borderColor="#333333"
+        shadowColor="rgba(0, 255, 0, 0.3)"
+        unitWidth="50px"
+        unitHeight="55px"
+        digitFontSize="1.3em"
       />
     </div>
   );

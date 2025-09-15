@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import FlipClock from "../../shared-components/flip-clock/flip-clock";
+import FlipClock from "../../shared-components/flip-clock";
 import { useCheckMobile } from "@/hooks/use-check-mobile";
 import { menuItems, sections } from "@/constants";
 import { MenuIcon } from "../../shared-components/pixel-icons";

@@ -39,9 +39,9 @@ header h1 {
   height: var(--flip-clock-height, 60px);
   padding: var(--flip-clock-padding, 8px);
   border-radius: var(--flip-clock-border-radius, 12px);
-  background: white;
+  background: var(--flip-clock-background-color, white);
   opacity: var(--flip-clock-opacity, 1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px var(--flip-clock-shadow-color, rgba(0, 0, 0, 0.1));
   position: relative;
 }
 
@@ -66,7 +66,7 @@ header h1 {
   width: var(--flip-clock-colon-width, 10px);
   height: var(--flip-clock-colon-height, 44px);
   margin: 0px;
-  color: #333;
+  color: var(--flip-clock-colon-color, #333);
   font-size: var(--flip-clock-colon-font-size, 1.2em);
   font-weight: bold;
 }
@@ -76,7 +76,7 @@ header h1 {
   content: '';
   width: var(--flip-clock-colon-dot-size, 4px);
   height: var(--flip-clock-colon-dot-size, 4px);
-  background-color: #333;
+  background-color: var(--flip-clock-colon-color, #333);
   border-radius: 50%;
   margin: 2px 0;
 }
@@ -88,9 +88,9 @@ header h1 {
   height: var(--flip-clock-unit-height, 44px);
   perspective-origin: 50% 50%;
   perspective: 100px;
-  background-color: #1a1a1a;
+  background-color: var(--flip-clock-card-background-color, #1a1a1a);
   border-radius: var(--flip-clock-unit-border-radius, 8px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 8px var(--flip-clock-shadow-color, rgba(0, 0, 0, 0.3));
   margin: 0 var(--flip-clock-unit-margin, 4px);
 }
 
@@ -110,7 +110,7 @@ header h1 {
   font-size: var(--flip-clock-digit-font-size, 1em);
   font-family: var(--flip-clock-font-family, 'Droid Sans Mono');
   font-weight: 600;
-  color: white;
+  color: var(--flip-clock-digit-color, white);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -151,7 +151,7 @@ header h1 {
   font-family: var(--flip-clock-font-family, 'Droid Sans Mono');
   font-size: var(--flip-clock-digit-font-size, 1em);
   font-weight: 600;
-  color: white;
+  color: var(--flip-clock-digit-color, white);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -160,11 +160,11 @@ header h1 {
   align-items: flex-start;
   transform-origin: 50% 0%;
   transform: rotateX(180deg);
-  background-color: #1a1a1a;
+  background-color: var(--flip-clock-card-background-color, #1a1a1a);
   border-bottom-left-radius: var(--flip-clock-unit-border-radius, 8px);
   border-bottom-right-radius: var(--flip-clock-unit-border-radius, 8px);
-  border: 0.1px solid #333;
-  border-top: 0.1px solid #333;
+  border: 0.1px solid var(--flip-clock-border-color, #333);
+  border-top: 0.1px solid var(--flip-clock-border-color, #333);
 }
 
 .flipCard.unfold span {
@@ -176,11 +176,11 @@ header h1 {
   align-items: flex-end;
   transform-origin: 50% 100%;
   transform: rotateX(0deg);
-  background-color: #1a1a1a;
+  background-color: var(--flip-clock-card-background-color, #1a1a1a);
   border-top-left-radius: var(--flip-clock-unit-border-radius, 8px);
   border-top-right-radius: var(--flip-clock-unit-border-radius, 8px);
-  border: 0.1px solid #333;
-  border-bottom: 0.1px solid #333;
+  border: 0.1px solid var(--flip-clock-border-color, #333);
+  border-bottom: 0.1px solid var(--flip-clock-border-color, #333);
 }
 
 .flipCard.fold span {
