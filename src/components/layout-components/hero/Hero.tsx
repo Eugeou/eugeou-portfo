@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import FlipClock from "../../shared-components/flip-clock";
+import { FlipClock } from "react-flip-clock-lib";
+import "react-flip-clock-lib/dist/index.css";
 import { useCheckMobile } from "@/hooks/use-check-mobile";
 import { RightIntroHero } from "@/components/shared-components/right-intro-hero";
 
@@ -18,7 +19,7 @@ const Hero = () => {
     >
       <div className="w-full md:w-1/2 flex flex-col md:flex-row justify-center items-center h-40">
         <FlipClock
-          width={isMobile ? "92%" : "65%"}
+          width={isMobile ? "92%" : "68%"}
           height="144px"
           padding="16px"
           borderRadius="20px"
@@ -30,6 +31,7 @@ const Hero = () => {
           colonHeight="116px"
           opacity={0.4}
           fontFamily="'Press Start 2P', 'Courier New', monospace"
+          showAmPm = {!isMobile}
         />
       </div>
       <RightIntroHero />

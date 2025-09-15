@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import FlipClock from "../../shared-components/flip-clock";
+import { FlipClock } from "react-flip-clock-lib";
 import { useCheckMobile } from "@/hooks/use-check-mobile";
 import { menuItems, sections } from "@/constants";
 import { MenuIcon } from "../../shared-components/pixel-icons";
@@ -46,7 +46,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="flex justify-between items-center border-b border-b-[rgb(200,203,211)] bg-white opacity-60 w-full fixed top-0 z-20">
+      <header className="flex justify-between items-center border-b border-b-[rgb(200,203,211)] bg-white opacity-60 w-full fixed top-0 z-20 py-1">
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
@@ -63,6 +63,7 @@ const Header = () => {
           unitMargin = "4px"
           digitFontSize = "1em"
           fontFamily="'Press Start 2P', 'Courier New', monospace"
+          showAmPm = {false}
            />
         </motion.div>
 
